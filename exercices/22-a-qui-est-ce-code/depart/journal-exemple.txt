@@ -1,0 +1,7 @@
+Journal fictif, au format de : git log -n 5 --format="%h | %an | %ad | %s" --date=short
+
+a41c9e2 | Prénom Stagiaire | 2026-11-17 | E21 : base séparée, liste blanche, tests au vert
+7be03d1 | Prénom Stagiaire | 2026-11-17 | E21 : état avant la sécurisation
+c90f5aa | Prénom Stagiaire | 2026-11-17 | E17 : formulaire de réservation branché sur /api/reservations
+12d7e44 | Prénom Stagiaire | 2026-11-17 | E17 : état avant le formulaire
+5f8b0c3 | Prénom Stagiaire | 2026-11-17 | Initial

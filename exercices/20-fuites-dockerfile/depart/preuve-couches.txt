@@ -1,0 +1,11 @@
+Relevé du 02/11/2026 sur l'image pigala-demo:fuite (Docker 25.0.3).
+Méthode : docker save de l'image, puis lecture de chaque couche avec un petit script Python (bibliothèque standard) qui cherche un nom de fichier.
+
+Recherche de secrets.env :
+couche 3 : app/secrets.env PRÉSENT -> JETON_DEPLOIEMENT=jeton-factice-pigala-0000-NE-PAS-UTILISER
+couche 4 : app/.wh.secrets.env (marque de suppression, le fichier n'est plus visible dans cette couche)
+
+Recherche de reservations.csv :
+couche 3 : app/reservations.csv PRÉSENT -> nom,telephone,email,date,couverts,commentaire,cree_le (puis les 30 lignes fictives)
+
+La couche 4 ne fait qu'ajouter une marque « supprimé » par-dessus. La couche 3, qui contient le fichier, fait toujours partie de l'image et peut être lue par quiconque la télécharge.

@@ -1,0 +1,15 @@
+/* Réserver une table : formulaire de réservation (E17) */
+.reservation form { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 1.5rem; max-width: 720px; }
+.reservation .champ { display: flex; flex-direction: column; gap: 0.25rem; }
+.reservation .champ-large { grid-column: 1 / -1; }
+.reservation label { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; }
+.reservation input, .reservation textarea {
+  font: inherit; color: var(--texte); background: #fff;
+  padding: 0.6rem 0.75rem; border: 2px solid var(--bleu); border-radius: 8px;
+}
+.reservation input:focus-visible, .reservation textarea:focus-visible, .reservation button:focus-visible {
+  outline: 3px solid var(--bleu); outline-offset: 3px;
+}
+.reservation button { justify-self: start; border: 0; cursor: pointer; font: inherit; font-family: "Segoe UI", Arial, sans-serif; }
+#reservation-message { margin: 1rem 0 0; font-weight: 700; }
+#reservation-message.reservation-erreur { color: #8A1C1C; }

@@ -1,0 +1,13 @@
+# Fins de ligne : tout fichier texte est stocké et extrait en LF, quel que soit
+# le poste et son réglage core.autocrlf. Git détecte lui-même les binaires
+# (text=auto), les lignes suivantes le confirment pour les formats du projet.
+* text=auto eol=lf
+
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.gif   binary
+*.db    binary
+*.pdf   binary
+*.zip   binary

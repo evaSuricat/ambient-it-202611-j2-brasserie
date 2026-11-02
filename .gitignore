@@ -1,0 +1,15 @@
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Outils de l'éditeur et des agents
+.playwright-mcp/
+
+# Volontairement absent : la règle « rapports/ » du jour 1 était trop large.
+# Les fichiers carte.db des depart/ sont versionnés exprès (données fictives).

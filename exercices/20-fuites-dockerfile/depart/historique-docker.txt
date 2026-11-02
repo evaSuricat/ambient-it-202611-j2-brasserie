@@ -1,0 +1,11 @@
+CMD ["cat" "/app/app.py"]
+RUN |1 JETON_DEPLOIEMENT=jeton-factice-pigala-0000-NE-PAS-UTILISER /bin/sh -c echo "Deploiement avec le jeton ${JETON_DEPLOIEMENT}" > /app/deploiement.log && rm secrets.env # buildkit
+COPY . . # buildkit
+WORKDIR /app
+ENV PIGALA_CLE=cle-factice-pigala-1111-NE-PAS-UTILISER
+ARG JETON_DEPLOIEMENT=jeton-factice-pigala-0000-NE-PAS-UTILISER
+/bin/sh -c #(nop)  CMD ["/bin/bash"]
+/bin/sh -c #(nop) ADD file:eed88e94d6aa7c9da62836e137f889e03988c1a6b237b0cedb6ca666dfaa98ea in / 
+/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04
+/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH
+/bin/sh -c #(nop)  ARG RELEASE
