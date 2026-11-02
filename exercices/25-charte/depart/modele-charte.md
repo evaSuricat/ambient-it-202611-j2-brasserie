@@ -1,6 +1,6 @@
 # Charte d'usage de l'IA : <nom de l'équipe ou de la structure>
 
-Une page. Dix règles au plus. Chaque règle dit **qui** la tient, **comment on la contrôle** et **quelle preuve** on garde. Une règle sans contrôle n'est pas une règle : c'est un vœu, et il va dans la dernière section.
+Une page. Dix règles au plus. Chaque règle dit **qui** la tient, **comment on la contrôle** et **quelle preuve** on garde. Une règle sans contrôle est un vœu, et il va dans la dernière section.
 
 Date de la charte :        Révision prévue :
 

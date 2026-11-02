@@ -82,7 +82,7 @@ Résultat attendu : une ligne « files changed » qui cite `servir.py`, `reserva
 
 ## Livrable
 
-`test_formulaire.py` et `test_securite.py` au vert (onze tests), un formulaire utilisable au clavier avec messages d'erreur, deux commits.
+`test_formulaire.py` et `test_securite.py` au vert (onze tests), un formulaire utilisable au clavier avec messages d'erreur, un ou deux commits : avant, quand quelque chose a changé, et après.
 
 ## Ce qu'on retient
 

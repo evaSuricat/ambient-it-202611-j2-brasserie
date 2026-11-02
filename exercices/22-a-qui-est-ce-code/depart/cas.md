@@ -2,11 +2,11 @@
 
 Les trois cas sont inventés pour la formation. Ils posent des questions de droits, de licences et d'auditabilité. Aucun ne demande un avis juridique : vous documentez la **décision de l'équipe** et sa trace.
 
-## Cas A : le snippet qui arrive avec une licence
+## Cas A : l'extrait de code qui arrive avec une licence
 
-En écrivant la validation du courriel du formulaire, l'assistant propose une fonction de douze lignes, qui commence par un en-tête. Le fichier `extrait-licence.js` la reproduit. L'en-tête annonce un auteur, une année et une licence. Personne dans l'équipe n'a écrit ce code ni ne connaît cet auteur.
+En écrivant la validation du courriel du formulaire, l'assistant propose une fonction de dix lignes de code, précédée d'un en-tête de six lignes (seize lignes en tout). Le fichier `extrait-licence.js` la reproduit. L'en-tête annonce un auteur, une année et une licence. Personne dans l'équipe n'a écrit ce code ni ne connaît cet auteur.
 
-Questions : que faites-vous de ces douze lignes ? Qu'est-ce que vous ne savez pas ? Que vérifiez-vous, et où ?
+Questions : que faites-vous de ces dix lignes de code ? Qu'est-ce que vous ne savez pas ? Que vérifiez-vous, et où ?
 
 ## Cas B : la question du client
 

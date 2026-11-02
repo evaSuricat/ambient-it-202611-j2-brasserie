@@ -56,5 +56,5 @@ Puis http://127.0.0.1:8000/ dans Chrome. `Ctrl+C` arrête le serveur. Deux situa
 ## Ce que ce dépôt contient, et ce qu'il ne contient pas
 
 - `carte.db` est versionnée dans les `depart/` : c'est voulu, la base fait partie de l'exercice. Elle ne contient que des données fictives. Dans un vrai projet, on ne versionne jamais une base de clients.
-- Les solutions ne sont pas ici : la formatrice les montre à la correction.
+- Les solutions complètes vivent dans le dépôt de la formatrice. Chaque `depart/` qui prolonge un exercice précédent en contient la solution : celui d'E23 contient `servir.py`, `gerant.py` et `separer_base.py` corrigés, qui sont la solution d'E21, voulue ainsi.
 - Le `.gitignore` ne contient que le nécessaire (`.venv/` et les fichiers de l'éditeur). Il n'ignore pas `rapports/` : vos dossiers de comptes rendus se committent normalement.

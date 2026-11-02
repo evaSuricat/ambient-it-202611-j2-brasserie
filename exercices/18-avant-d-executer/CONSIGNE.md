@@ -6,7 +6,7 @@
 
 ## Ce qu'on fait
 
-`exercices/18-avant-d-executer/depart/reponse-ia.md` est une réponse figée d'un assistant à la question « comment sécuriser la table des réservations et nettoyer les anciennes ? ». Elle a l'air sérieuse. Elle contient du juste et du faux. Votre travail : trier, **sans rien exécuter ni installer**, et savoir dire comment vous avez vérifié chaque point. Le fichier est écrit pour l'exercice (voir `SOURCES.md`) : ce n'est pas une vraie sortie de modèle, mais il imite des erreurs réelles de ce type d'outil.
+`exercices/18-avant-d-executer/depart/reponse-ia.md` est une réponse figée d'un assistant à la question « comment sécuriser la table des réservations et nettoyer les anciennes ? ». Elle a l'air sérieuse. Elle contient du juste et du faux. Votre travail : trier, **sans rien exécuter ni installer**, et savoir dire comment vous avez vérifié chaque point. Le fichier est écrit à la main pour l'exercice (voir `SOURCES.md`) : il imite des erreurs réelles de ce type d'outil.
 
 Cet exercice se fait sans abonnement : le navigateur et vos yeux suffisent. L'étape 6 utilise votre outil, Claude Code ou Copilot Free, et peut se suivre sur l'écran partagé.
 
@@ -30,7 +30,7 @@ Ouvrez `exercices/18-avant-d-executer/depart/reponse-ia.md` et `exercices/18-ava
 
 ### Étape 2 : premier tri, à l'œil
 
-Dans `tri.md`, remplissez la colonne « Verdict » pour chaque ligne avec ce que vous pensez **avant toute vérification** (juste, faux, à ignorer). Notez-vous une certitude de 1 à 3 à côté. Vous la comparerez à la fin.
+Dans `tri.md`, remplissez la colonne « Premier avis » pour chaque ligne avec ce que vous pensez **avant toute vérification** (juste, faux, à ignorer), suivi d'une certitude de 1 à 3 (par exemple « faux, 2 »). Ne la modifiez plus ensuite : vous la comparerez à la colonne « Après vérification » à l'étape 7.
 
 ### Étape 3 : le paquet existe-t-il ?
 
@@ -86,7 +86,7 @@ Notez dans `tri.md`, en bas, **l'outil et le modèle** utilisés et ce qu'il a t
 
 ### Étape 7 : remplir le tri et enregistrer
 
-Complétez `tri.md` (verdict, pourquoi, comment vérifié) et ses trois lignes de conclusion. Comparez avec votre premier tri de l'étape 2 : sur quels points avez-vous changé d'avis, et grâce à quoi ? Depuis la racine :
+Complétez `tri.md` : la colonne « Après vérification » (juste, faux ou à ignorer), « Pourquoi », « Comment vérifié », et ses trois lignes de conclusion. Comparez les colonnes « Premier avis » (étape 2) et « Après vérification » : sur quels points avez-vous changé d'avis, et grâce à quoi ? Depuis la racine :
 
 ```
 git add exercices/18-avant-d-executer
@@ -100,7 +100,7 @@ Résultat attendu : une ligne « files changed » qui cite `tri.md`.
 
 ## Livrable
 
-`exercices/18-avant-d-executer/depart/tri.md` rempli : juste, faux, à ignorer, et pourquoi, avec le moyen de vérification de chaque ligne.
+`exercices/18-avant-d-executer/depart/tri.md` rempli : le premier avis, puis, après vérification, juste, faux ou à ignorer, et pourquoi, avec le moyen de vérification de chaque ligne.
 
 ## Ce qu'on retient
 

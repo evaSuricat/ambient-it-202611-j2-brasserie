@@ -20,4 +20,4 @@
 
 ## Pseudonymisé ou anonymisé ?
 
-(Gardez-vous un tableau qui permet de retrouver la personne derrière « Personne A » ? Si oui, c'est de la pseudonymisation, réversible, et ce n'est pas de l'anonymisation. Écrivez votre réponse.)
+(Gardez-vous un tableau qui permet de retrouver la personne derrière « Personne A » ? Si oui, c'est de la pseudonymisation, qui reste réversible. Écrivez votre réponse.)

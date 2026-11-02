@@ -32,7 +32,7 @@ restaurant Montreuil, bar Montreuil, pizza Montreuil, karaoké Montreuil, happy 
 | Nom | Le Pigala |
 | Adresse | 12 rue des Houblonnières, 93100 Montreuil |
 | Métro | Croix de Chavaux (ligne 9), 3 minutes à pied |
-| Téléphone | 01 23 45 67 89 |
+| Téléphone | 01 99 00 12 34 |
 | Horaires | du mardi au samedi 11 h 30 à minuit, dimanche 11 h à 16 h (brunch), fermé le lundi |
 | Happy hour | 17 h à 19 h en terrasse, du mardi au vendredi |
 | Karaoké | jeudi de 20 h à 23 h |

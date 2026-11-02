@@ -30,6 +30,8 @@ git add exercices/23-fiche-et-purge
 git commit -m "E23 : état avant la fiche et la purge"
 ```
 
+Résultat attendu : une ligne « files changed ». « nothing to commit » est normal si rien n'a changé (dossier fourni gardé).
+
 ### Étape 1 : les tests de la purge, au rouge
 
 ```
@@ -65,12 +67,14 @@ Notez l'outil et le modèle, le chiffre donné s'il y en a un, et si une source 
 ### Étape 4 : écrire la purge
 
 ```
-Dans exercices/23-fiche-et-purge/depart/, lis AGENTS.md à la racine du dépôt, test_purge.py et donnees/. Écris purger.py : il supprime de la table reservations de donnees/reservations.db les réservations dont la date est antérieure à (aujourd'hui moins N jours). Options : --conserver-jours N (obligatoire : sans elle le script refuse de tourner), --base chemin (base à purger, par défaut donnees/reservations.db), --aujourdhui AAAA-MM-JJ (pour les tests), --appliquer. Sans --appliquer, le script ne supprime rien : il affiche combien de réservations seraient supprimées. Avec --appliquer, il supprime et journalise la purge dans un fichier purge.log placé dans le même dossier que la base. Ne lance pas le script sur la vraie base.
+Dans exercices/23-fiche-et-purge/depart/, lis AGENTS.md à la racine du dépôt et test_purge.py. N'ouvre pas le dossier donnees/ ni son contenu. Voici ce qu'il te faut de la base : le fichier donnees/reservations.db, une base SQLite avec une table reservations aux colonnes id (entier, clé primaire), nom, telephone, email, date (texte AAAA-MM-JJ), couverts (entier), commentaire et cree_le (texte). Écris purger.py : il supprime de la table reservations de donnees/reservations.db les réservations dont la date est antérieure à (aujourd'hui moins N jours). Options : --conserver-jours N (obligatoire : sans elle le script refuse de tourner), --base chemin (base à purger, par défaut donnees/reservations.db), --aujourdhui AAAA-MM-JJ (pour les tests), --appliquer. Sans --appliquer, le script ne supprime rien : il affiche combien de réservations seraient supprimées. Avec --appliquer, il supprime et journalise la purge dans un fichier purge.log placé dans le même dossier que la base. Ne lance pas le script sur la vraie base.
 ```
+
+Le prompt donne lui-même le schéma de la table : la base contient des données personnelles, et la règle d'`AGENTS.md` posée à l'exercice 21 (« n'envoie jamais à un modèle une donnée de donnees/ ») comme la règle de refus de lecture `Read(**/donnees/**)` demandent que l'outil n'ait pas à l'ouvrir. En mode Manual, lisez chaque permission : si l'outil demande à lire `donnees/`, refusez.
 
 ### Étape 5 : relire avant de lancer
 
-Vérifiez dans `purger.py` : la suppression a-t-elle un `WHERE` ? Le script refuse-t-il vraiment de tourner sans `--conserver-jours` ? Que contient une ligne de `purge.log` ? **Un journal qui recopie des noms ou des téléphones est lui-même un fichier de données personnelles**, sans fiche et sans durée. Puis les tests :
+Vérifiez dans `purger.py` : la suppression a-t-elle un `WHERE` ? Le script refuse-t-il vraiment de tourner sans `--conserver-jours` ? Que contient une ligne de `purge.log` ? L'outil a-t-il essayé de lire `donnees/` malgré la consigne ? **Un journal qui recopie des noms ou des téléphones est lui-même un fichier de données personnelles**, sans fiche et sans durée. Puis les tests :
 
 ```
 python -m unittest test_purge -v
@@ -124,7 +128,7 @@ Résultat attendu : une ligne « files changed » qui cite `fiche-traitement.md`
 
 ## Livrable
 
-`fiche-traitement.md`, `purger.py` avec ses quatre tests au vert, deux commits (avant et après).
+`fiche-traitement.md`, `purger.py` avec ses quatre tests au vert, un ou deux commits : avant, quand quelque chose a changé, et après.
 
 ## Ce qu'on retient
 

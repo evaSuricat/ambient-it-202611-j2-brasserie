@@ -50,6 +50,8 @@ git add exercices/21-securiser-workflow
 git commit -m "E21 : état avant la sécurisation"
 ```
 
+Résultat attendu : une ligne « files changed ». « nothing to commit » est normal si rien n'a changé (page fournie gardée).
+
 ### Étape 1 : les tests, au rouge
 
 ```
@@ -104,7 +106,7 @@ Résultat attendu : sept lignes avec noms, téléphones, courriels et commentair
 python anonymiser_regex.py
 ```
 
-Résultat attendu : les téléphones et courriels sont masqués. **Lisez la sortie et comptez ce qui reste** : noms de clients, une sœur nommée dans un commentaire, un fils nommé avec une allergie et de l'asthme (donnée de santé), un fauteuil roulant (santé), et une ligne qui n'est pas une donnée mais une consigne cachée. Une expression régulière masque ce qu'elle sait reconnaître ; le reste passe. Ouvrez `extrait-anonyme.md` et remplissez-le **à la main** : l'extrait que vous enverriez réellement, ce que vous avez retiré, et pourquoi. Dernière question du fichier : si vous gardez un tableau qui relie « Personne A » à Samuel Vidal, avez-vous anonymisé ? La CNIL distingue : la pseudonymisation est réversible, l'anonymisation ne l'est pas.
+Résultat attendu : les téléphones et courriels sont masqués. **Lisez la sortie et comptez ce qui reste** : noms de clients, une sœur nommée dans un commentaire, un fils nommé avec une allergie et de l'asthme (donnée de santé), un fauteuil roulant (santé), et une ligne qui contient une consigne cachée. Une expression régulière masque ce qu'elle sait reconnaître ; le reste passe. Ouvrez `extrait-anonyme.md` et remplissez-le **à la main** : l'extrait que vous enverriez réellement, ce que vous avez retiré, et pourquoi. Dernière question du fichier : si vous gardez un tableau qui relie « Personne A » à Claire Lemaire, avez-vous anonymisé ? La CNIL distingue : la pseudonymisation est réversible, l'anonymisation ne l'est pas.
 
 Pour voir l'effet de la consigne cachée, envoyez ensuite à votre outil les sept lignes **brutes** (elles sont fictives), avec ce prompt :
 
@@ -218,7 +220,7 @@ La documentation (lue le 02/11/2026) dit que la règle ne couvre pas une command
 
 ### Étape 9 : la revue
 
-Avec les correctifs en place et rien d'autre de modifié (committez les exercices précédents d'abord). Dans **Claude Code**, la commande `/security-review` relit ce qui n'est pas encore committé ; elle répond en anglais. Avec **Copilot Free**, sélectionnez le contenu de `servir.py`, clic droit, **Review** (menu constaté à la répétition du jour 1 ; si vous ne le voyez pas, cherchez une entrée de revue dans ce menu) : la revue peut ne rien dire. Ouvrez `tri-revue.md` et triez chaque remarque : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Si l'outil n'a rien dit, répondez à la dernière question du fichier.
+Avec les correctifs en place et rien d'autre de modifié (committez les exercices précédents d'abord). Dans **Claude Code**, la commande `/security-review` relit ce qui n'est pas encore committé ; la langue de sa réponse est à vérifier (l'anglais est possible, aucune source n'a été lue sur ce point). Avec **Copilot Free**, sélectionnez le contenu de `servir.py`, clic droit, **Review** (menu constaté à la répétition du jour 1 ; si vous ne le voyez pas, cherchez une entrée de revue dans ce menu) : la revue peut ne rien dire. Ouvrez `tri-revue.md` et triez chaque remarque : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Si l'outil n'a rien dit, répondez à la dernière question du fichier.
 
 ### Étape 10 : enregistrer le résultat
 
@@ -252,11 +254,11 @@ Résultat à observer : l'outil refuse-t-il, avertit-il, ou ajoute-t-il la route
 git restore exercices/21-securiser-workflow/depart/servir.py
 ```
 
-Résultat attendu : aucun message, et `servir.py` retrouve son état committé. Les règles d'`AGENTS.md` guident l'outil ; ce ne sont pas des interdits techniques.
+Résultat attendu : aucun message, et `servir.py` retrouve son état committé. Les règles d'`AGENTS.md` guident l'outil, sans rien interdire techniquement.
 
 ## Livrable
 
-Les six tests au vert, `extrait-anonyme.md`, `tri-revue.md`, `AGENTS.md` complété, deux commits (avant et après).
+Les six tests au vert, `extrait-anonyme.md`, `tri-revue.md`, `AGENTS.md` complété, un ou deux commits : avant, quand quelque chose a changé, et après.
 
 ## Ce qu'on retient
 

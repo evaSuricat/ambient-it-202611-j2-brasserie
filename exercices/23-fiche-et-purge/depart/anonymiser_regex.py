@@ -2,7 +2,7 @@
 
     python anonymiser_regex.py
 
-C'est l'outil rapide qu'on écrit en premier. L'étape 5 de l'exercice 21 consiste à lire sa
+C'est l'outil rapide qu'on écrit en premier. L'étape 4 de l'exercice 21 consiste à lire sa
 sortie et à compter ce qu'il a laissé passer.
 """
 import re

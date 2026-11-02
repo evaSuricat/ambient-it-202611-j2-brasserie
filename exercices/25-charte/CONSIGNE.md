@@ -36,7 +36,7 @@ Dans Claude Code, ou dans le chat de Copilot en mode **Ask** :
 Écris une charte d'usage de l'IA en dix règles pour une équipe de développement de cinq personnes qui utilise des assistants de code. Pour chaque règle : qui la tient, comment on la contrôle, quelle preuve on garde. Ne cite aucune norme ni aucun article de loi.
 ```
 
-Notez l'outil et le modèle. Puis **ne recopiez rien tel quel**. Pour chaque règle, une question : peut-on prouver, demain, qu'elle a été tenue ou violée ? Marquez chaque règle : vérifiable, à reformuler, ou vœu. Si vous n'avez pas d'IA, appliquez le même tri aux dix règles de `charte-exemple-ia.md` : lesquelles se vérifient ? (Indice : la règle 7, « signaler tout incident dans les meilleurs délais », se vérifie quand on sait à qui, par quel moyen et en combien de temps. Comparez avec l'article 33 du RGPD cité dans `tableau-normes.md`, qui parle de 72 heures au plus tard, si possible.)
+Notez l'outil et le modèle. Puis **ne recopiez rien tel quel**. Pour chaque règle, une question : peut-on prouver, demain, qu'elle a été tenue ou violée ? Marquez chaque règle : vérifiable, à reformuler, ou vœu. Si vous n'avez pas d'IA, appliquez le même tri aux dix règles de `charte-exemple-ia.md` : lesquelles se vérifient ? (Indice : la règle 7, « signaler tout incident dans les meilleurs délais », se vérifie quand on sait à qui, par quel moyen et en combien de temps. Comparez avec l'article 33 du RGPD cité dans `tableau-normes.md`, qui prévoit une notification à l'autorité de contrôle « dans les meilleurs délais et, si possible, 72 heures au plus tard après en avoir pris connaissance ».)
 
 ### Étape 3 : écrire votre charte (15 min)
 
@@ -84,7 +84,7 @@ Résultat attendu : une ligne « files changed » qui cite `charte-ia.md`. Si `A
 
 ## Ce qu'on retient
 
-- Une règle sans contrôle n'est pas une règle. La preuve est ce qui distingue une charte d'une affiche.
+- Une règle sans contrôle est un vœu. La preuve distingue une charte d'une affiche.
 - Une charte écrite par l'IA et recopiée sans tri est une liste de vœux bien rédigée.
 - Une règle en `AGENTS.md` ou en refus de lecture se teste, et on cherche sa limite.
 - Une norme dont on n'a lu que le résumé se cite comme telle.

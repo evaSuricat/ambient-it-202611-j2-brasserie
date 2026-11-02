@@ -38,7 +38,7 @@
       afficher("Votre demande est enregistrée (numéro " + resultat.id + ").", false);
     } catch (e) {
       console.error(e);
-      afficher("Votre demande n'a pas pu être envoyée. Appelez le 01 23 45 67 89.", true);
+      afficher("Votre demande n'a pas pu être envoyée. Appelez le 01 99 00 12 34.", true);
     }
   });
 })();

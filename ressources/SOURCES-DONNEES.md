@@ -4,9 +4,9 @@ Règle du dépôt : une donnée absente d'un fichier du dossier, un modèle l'in
 
 | Donnée | Où | Origine |
 |---|---|---|
-| Le Pigala (nom, adresse, horaires, téléphone) | `brief.md` | Inventé pour la formation. Le téléphone du restaurant, 01 23 45 67 89, est un numéro de fiction du brief du jour 1 |
+| Le Pigala (nom, adresse, horaires, téléphone) | `brief.md` | Inventé pour la formation. Le téléphone du restaurant, 01 99 00 12 34, est un numéro de fiction pris dans la tranche 01 99 00 que l'Arcep réserve aux œuvres audiovisuelles (voir plus bas) |
 | La carte | `ressources/carte.csv`, `carte.md` | Inventée pour la formation (jour 1) |
-| 30 réservations | `ressources/reservations.csv` et `exercices/17-reservations/depart/reservations.csv` | Inventées pour la formation : noms et prénoms composés au hasard, courriels en `@example.com`, téléphones dans les tranches que l'Arcep réserve à la fiction audiovisuelle (01 99 00 et 06 39 98, voir ci-dessous). Les commentaires piégés (un tiers nommé, un numéro de tiers, une allergie, une instruction cachée) sont écrits exprès |
+| 30 réservations | `ressources/reservations.csv` et `exercices/17-reservations/depart/reservations.csv` | Inventées pour la formation : noms fictifs choisis, sans correspondance recherchée avec des personnes réelles, courriels en `@example.com`, téléphones dans les tranches que l'Arcep réserve à la fiction audiovisuelle (01 99 00 et 06 39 98, voir ci-dessous). Les commentaires piégés (un tiers nommé, un numéro de tiers, une allergie, une instruction cachée) sont écrits exprès |
 | Historique de 120 demandes de réservation | `exercices/24-revue-user-story/depart/historique.csv` | Inventé pour la formation. Les codes postaux 99001 à 99004 n'existent pas : ils ne désignent aucune commune réelle |
 | Réponse « d'un assistant » | `exercices/18-avant-d-executer/depart/reponse-ia.md` | Texte écrit pour l'exercice, pas une vraie sortie de modèle |
 | Sortie de `docker history` | `exercices/20-fuites-dockerfile/depart/historique-docker.txt` | Sortie réelle, relevée le 02/11/2026 avec Docker 25.0.3 sur une image construite pour l'occasion, avec un faux jeton visiblement faux |

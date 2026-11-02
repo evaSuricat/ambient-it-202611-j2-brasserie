@@ -6,7 +6,7 @@
 
 ## Ce qu'on fait
 
-Chacun ouvre les réglages de ses propres comptes et remplit `exercices/19-ce-que-mes-outils-gardent/depart/fiche-outils.md`. Ce n'est pas un exercice de code : c'est un relevé, sur votre écran, de ce qui existe réellement aujourd'hui. La consigne ne vous dit pas où cliquer parce que les menus changent. Elle vous dit quoi chercher.
+Chacun ouvre les réglages de ses propres comptes et remplit `exercices/19-ce-que-mes-outils-gardent/depart/fiche-outils.md`. Le travail est un relevé, sur votre écran, de ce qui existe réellement aujourd'hui, sans écrire de code. La consigne ne vous dit pas où cliquer parce que les menus changent. Elle vous dit quoi chercher.
 
 **Rien de personnel à l'écran.** Si vous partagez votre écran, ouvrez les réglages, jamais la liste de vos conversations : fermez le panneau d'historique avant. La formatrice fait de même sur le sien. **On regarde sans rien changer**, sauf un choix personnel que vous notez dans la dernière ligne du tableau B.
 

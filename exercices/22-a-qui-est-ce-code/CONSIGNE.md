@@ -28,11 +28,11 @@ Résultat attendu : « nothing to commit » est normal si rien n'a changé depui
 
 Ouvrez `exercices/22-a-qui-est-ce-code/depart/cas.md` et `exercices/22-a-qui-est-ce-code/depart/extrait-licence.js`. Cinq minutes de lecture, pas plus. Dans l'extrait, trouvez l'en-tête de licence : auteur, année, licence.
 
-### Étape 2 : le cas A, le snippet avec licence
+### Étape 2 : le cas A, l'extrait de code avec licence
 
-Dans `exercices/22-a-qui-est-ce-code/depart/decisions-code.md`, écrivez ce que vous faites des douze lignes. Trois options existent : les retirer et les réécrire sans les avoir sous les yeux, les garder en respectant la licence annoncée (ce qui a des conséquences sur le reste du code), les remplacer par une bibliothèque standard. Choisissez, et écrivez **ce que vous ne savez pas** : l'en-tête est-il authentique ? Le code vient-il vraiment de cet auteur ? Qui peut le vérifier ?
+Dans `exercices/22-a-qui-est-ce-code/depart/decisions-code.md`, écrivez ce que vous faites des dix lignes de code (seize avec l'en-tête de licence). Trois options existent : les retirer et les réécrire sans les avoir sous les yeux, les garder en respectant la licence annoncée (ce qui a des conséquences sur le reste du code), les remplacer par une bibliothèque standard. Choisissez, et écrivez **ce que vous ne savez pas** : l'en-tête est-il authentique ? Le code vient-il vraiment de cet auteur ? Qui peut le vérifier ?
 
-Regardez ensuite le réglage de votre compte GitHub, si vous en avez un : dans les réglages Copilot, cherchez une rubrique qui parle de suggestions qui correspondent à du code public. L'intitulé exact change (libellé non vérifié à l'écran au moment d'écrire cette consigne). Notez la valeur que vous voyez, ou « absent ». **Ne changez rien** sauf choix personnel. La documentation GitHub lue pour l'exercice dit que seules les suggestions en ligne acceptées sans modification sont comparées à l'index de code public : un snippet produit par le chat ou par un agent n'est donc peut-être pas couvert par ce réglage. Notez cette limite.
+Regardez ensuite le réglage de votre compte GitHub, si vous en avez un : dans les réglages Copilot, cherchez une rubrique qui parle de suggestions qui correspondent à du code public. L'intitulé exact change (libellé non vérifié à l'écran au moment d'écrire cette consigne). Notez la valeur que vous voyez, ou « absent ». **Ne changez rien** sauf choix personnel. La documentation GitHub (page « Code suggestions », lue le 02/11/2026) dit : pour les suggestions en ligne, seules celles acceptées sans modification sont comparées à l'index de code public ; dans le chat, une référence peut s'afficher sous la réponse si le réglage l'autorise ; les journaux de session d'agent portent un lien vers le code correspondant ; les correspondances sont rares (moins d'un pour cent des suggestions en ligne). Notez ce que la page dit du chat et des agents, et ce qu'elle ne dit pas.
 
 ### Étape 3 : le cas C, l'historique de votre dépôt
 
@@ -76,10 +76,10 @@ Résultat attendu : une ligne « files changed » qui cite `decisions-code.md`.
 
 ## Livrable
 
-`decisions-code.md` rempli, deux commits.
+`decisions-code.md` rempli, un ou deux commits : avant, quand quelque chose a changé, et après.
 
 ## Ce qu'on retient
 
 - On ne conclut pas ce que les sources ne disent pas. « Ouvert » est une réponse d'équipe valable, si elle est écrite avec le nom de qui la lèvera.
-- Une licence annoncée dans un snippet engage au moment où vous le gardez.
+- Une licence annoncée dans un extrait de code engage au moment où vous le gardez.
 - L'historique git dit qui a committé, pas qui a écrit. Pour l'audit, la trace se décide avant : un message de commit, une étiquette, une relecture notée.

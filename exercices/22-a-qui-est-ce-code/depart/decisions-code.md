@@ -2,7 +2,7 @@
 
 Une page. Pour chaque cas : ce que l'équipe décide, la **trace** qui prouve la décision, qui valide, et ce qui reste ouvert. « Ouvert » est une réponse valable : ne conclure aucun point de droit que vos sources ne tranchent pas.
 
-## Cas A : le snippet avec licence
+## Cas A : l'extrait de code avec licence
 
 - Décision :
 - Trace (où c'est écrit, comment on le retrouve) :

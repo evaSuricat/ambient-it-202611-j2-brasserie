@@ -10,7 +10,7 @@ Les normes ci-dessous sont des **repères**. Les textes payants n'ont pas été 
 | [ISO/IEC 23894:2023](https://www.iso.org/standard/77304.html) | 26 pages. Texte payant : 155 CHF. Lisez le résumé sur la page ISO avant de lui prêter un contenu | Résumé seul : le texte n'a pas été lu |
 | [OWASP Top 10 pour les applications LLM, 2025](https://genai.owasp.org/llm-top-10/) | Liste LLM01 à LLM10 | Liste lue, pas le détail de chaque risque |
 | [CNIL, IA et RGPD : recommandations](https://www.cnil.fr/fr/ia-et-rgpd-la-cnil-publie-ses-nouvelles-recommandations-pour-accompagner-une-innovation-responsable) | Page du 07/02/2025 | Annonce lue, pas chaque fiche |
-| [RGPD, EUR-Lex](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679) | Article 5 (limitation de la conservation), article 22 (décision automatisée), article 33 (notification, 72 heures au plus tard si possible) | Articles cités seulement |
+| [RGPD, EUR-Lex](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679) | Article 5 (limitation de la conservation), article 22 (décision automatisée), article 33 (notification à l'autorité de contrôle « dans les meilleurs délais et, si possible, 72 heures au plus tard après en avoir pris connaissance ») | Articles 22 et 33 : paragraphes cités lus sur EUR-Lex le 02/11/2026. Article 5 : mention seulement |
 
 ## B. Outils de suivi des usages
 

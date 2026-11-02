@@ -118,7 +118,7 @@ Résultat attendu : `(31, 'Essai Stagiaire', '2026-12-12', 2)`, avec vos valeurs
 
 ### Étape 8 : le cas d'échec
 
-Arrêtez le serveur (`Ctrl+C`), renvoyez le formulaire. Résultat attendu : « Votre demande n'a pas pu être envoyée. Appelez le 01 23 45 67 89. », et dans la console (F12) une erreur réseau, pas un 404. Relancez le serveur ensuite. Un 404 sur `/api/reservations` avec le serveur lancé voudrait dire que l'adresse du `fetch` est fausse.
+Arrêtez le serveur (`Ctrl+C`), renvoyez le formulaire. Résultat attendu : « Votre demande n'a pas pu être envoyée. Appelez le 01 99 00 12 34. », et dans la console (F12) une erreur réseau, pas un 404. Relancez le serveur ensuite. Un 404 sur `/api/reservations` avec le serveur lancé voudrait dire que l'adresse du `fetch` est fausse.
 
 ### Étape 9 : enregistrer le résultat
 
@@ -140,7 +140,7 @@ Résultat attendu : une ligne « files changed » qui cite `index.html`, `css/re
 
 ## Livrable
 
-La page avec son formulaire, une ligne de plus dans la table `reservations`, deux commits (avant et après).
+La page avec son formulaire, une ligne de plus dans la table `reservations`, un ou deux commits : avant, quand quelque chose a changé, et après.
 
 ## Ce qu'on retient
 

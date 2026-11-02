@@ -26,7 +26,7 @@ Résultat attendu : « nothing to commit » est normal si rien n'a changé depui
 
 ### Étape 1 : lire le Dockerfile, sans l'IA
 
-Ouvrez `exercices/20-fuites-dockerfile/depart/Dockerfile`. Sept lignes. Avant tout outil, notez dans un coin de votre éditeur, ou sur papier : à quel endroit, selon vous, un secret peut rester dans l'image ? Quelques minutes, pas plus.
+Ouvrez `exercices/20-fuites-dockerfile/depart/Dockerfile`. Sept lignes. Avant tout outil, ouvrez `exercices/20-fuites-dockerfile/depart/reponses.md` et notez, dans la section « Étape 1 » : à quel endroit, selon vous, un secret peut rester dans l'image ? Quelques minutes, pas plus.
 
 ### Étape 2 : lire ce que l'image raconte d'elle-même
 
@@ -34,9 +34,9 @@ Ouvrez `exercices/20-fuites-dockerfile/depart/historique-docker.txt`. C'est la s
 
 ### Étape 3 : ce que la copie embarque
 
-Regardez la ligne `COPY . .` puis la liste des fichiers du dossier `depart/` : `app.py`, `reservations.csv`, `secrets.env`. Il n'existe pas de fichier `.dockerignore`. Que contient donc l'image à cet endroit ? Écrivez la réponse en une phrase.
+Regardez la ligne `COPY . .` puis la liste des fichiers du dossier `depart/` : `app.py`, `reservations.csv`, `secrets.env`. Il n'existe pas de fichier `.dockerignore`. Que contient donc l'image à cet endroit ? Écrivez la réponse en une phrase dans `reponses.md` (section « Étape 3, première question »).
 
-Puis la ligne `RUN ... rm secrets.env` : le fichier est supprimé. Pensez-vous que le jeton a disparu de l'image ? Écrivez votre réponse avant l'étape suivante.
+Puis la ligne `RUN ... rm secrets.env` : le fichier est supprimé. Pensez-vous que le jeton a disparu de l'image ? Écrivez votre réponse dans `reponses.md` (section « Étape 3, seconde question ») avant l'étape suivante.
 
 ### Étape 4 : la preuve
 
@@ -79,14 +79,14 @@ git add exercices/20-fuites-dockerfile
 ```
 
 ```
-git commit -m "E20 : Dockerfile corrigé et .dockerignore"
+git commit -m "E20 : réponses, Dockerfile corrigé et .dockerignore"
 ```
 
-Résultat attendu : une ligne « files changed » qui cite `Dockerfile.corrige` et `.dockerignore`.
+Résultat attendu : une ligne « files changed » qui cite `reponses.md`, `Dockerfile.corrige` et `.dockerignore`.
 
 ## Livrable
 
-`Dockerfile.corrige` et `.dockerignore`, plus vos deux réponses écrites aux étapes 1 et 3.
+`Dockerfile.corrige` et `.dockerignore`, plus `reponses.md` avec vos réponses des étapes 1 et 3.
 
 ## Ce qu'on retient
 
