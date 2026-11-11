@@ -12,15 +12,9 @@ Cette fiche est un exercice utile dans tous les cas. Elle ne dit pas si Le Pigal
 
 Sans abonnement Claude Code : mêmes prompts dans Copilot Free en mode **Agent** (« New Chat » repasse en Ask : remettez Agent), ou suivez sur l'écran partagé. Mode de permissions **Manual** : lisez chaque permission avant de l'accepter.
 
-### Étape 0 : reprendre votre dossier de l'exercice 21
+### Étape 0 : enregistrer le point de départ
 
-Depuis la racine de `stagiaire_J2`. Cette ligne copie votre dossier de l'exercice 21 (page, serveur, base séparée, tests) dans celui de l'exercice 23, sans écraser les fichiers propres à l'exercice 23. Si votre exercice 21 n'a pas abouti (tests au rouge, pas de dossier `donnees/`), ne la lancez pas : le dossier fourni est la solution.
-
-```
-python -c "import shutil; shutil.copytree('exercices/21-securiser-workflow/depart', 'exercices/23-fiche-et-purge/depart', dirs_exist_ok=True, ignore=shutil.ignore_patterns('SOURCES.md', '__pycache__', 'tri-revue.md', 'extrait-anonyme.md'))"
-```
-
-Résultat attendu : aucun message. Une erreur `FileNotFoundError` : le dossier de l'exercice 21 n'est pas là, rien n'a été écrit, gardez le dossier fourni. Puis :
+Le départ fourni contient les correctifs d'E21 : la page avec son formulaire, le serveur sécurisé, la base séparée dans `donnees/` et les tests. Depuis la racine de `stagiaire_J2` :
 
 ```
 git add exercices/23-fiche-et-purge
@@ -30,7 +24,7 @@ git add exercices/23-fiche-et-purge
 git commit -m "E23 : état avant la fiche et la purge"
 ```
 
-Résultat attendu : une ligne « files changed ». « nothing to commit » est normal si rien n'a changé (dossier fourni gardé).
+Résultat attendu : « nothing to commit » est normal si rien n'a changé depuis le clonage. Sinon, une ligne « files changed ».
 
 ### Étape 1 : les tests de la purge, au rouge
 

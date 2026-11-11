@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Pigala, brasserie de quartier à Montreuil</title>
+  <meta name="description" content="Le Pigala, brasserie-restaurant et bar à Montreuil, à deux pas du métro Croix de Chavaux : burgers, pizzas, tapas, bières pression, happy hour en terrasse, karaoké le jeudi.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/plan-acces.css">
+</head>
+<body>
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <p class="logo"><a href="#contenu">Le Pigala</a></p>
+    <nav aria-label="Navigation principale">
+      <a href="#carte">La carte</a>
+      <a href="#horaires">Horaires</a>
+      <a href="#avis">Avis</a>
+      <a href="#venir">Venir</a>
+    </nav>
+    <a class="bouton" href="tel:+33199001234">Appeler</a>
+  </header>
+
+  <main id="contenu">
+    <section class="heros" aria-labelledby="titre">
+      <div class="heros-texte">
+        <h1 id="titre">Le Pigala, brasserie de quartier à Montreuil</h1>
+        <p class="accroche">Un restaurant, un bar et une terrasse à trois minutes du métro Croix de Chavaux. Burgers, pizzas, tapas, bières pression. Ouvert cet été.</p>
+        <p class="actions">
+          <a class="bouton" href="tel:+33199001234">Appeler le 01 99 00 12 34</a>
+          <a class="lien" href="#carte">Voir la carte</a>
+        </p>
+      </div>
+      <div class="photo-attente" aria-hidden="true">Photo de la façade, à venir</div>
+    </section>
+
+    <section class="esprit" aria-labelledby="esprit-titre">
+      <div class="contenant">
+        <h2 id="esprit-titre">L'esprit du lieu</h2>
+        <p>On attend juste le premier pas. Le reste, la qualité, les prix corrects, l'accueil, c'est à nous de le faire.</p>
+        <p>Des habitués, des gens de passage, des bureaux du quartier à midi, des amis le soir. Une brasserie de quartier, au sens restaurant du mot : on y mange, on y boit un verre, on y reste.</p>
+        <ul class="pictos">
+          <li><span class="picto" aria-hidden="true">●</span><strong>À manger</strong> salades, burgers, pizzas, tapas et planches à partager</li>
+          <li><span class="picto" aria-hidden="true">●</span><strong>À boire</strong> bières pression, cocktails, happy hour en terrasse</li>
+          <li><span class="picto" aria-hidden="true">●</span><strong>À vivre</strong> karaoké le jeudi, soirées jeux, brunch le week-end</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="carte" id="carte" aria-labelledby="carte-titre">
+      <h2 id="carte-titre">La carte</h2>
+      <!-- La carte est lue depuis /api/carte (base SQLite, voir servir.py). Sans script, la version écrite ci-dessous s'affiche. -->
+      <div class="colonnes">
+        <div>
+          <h3>Bières et cidre</h3>
+          <ul data-categorie="biere"></ul>
+        </div>
+        <div>
+          <h3>À manger</h3>
+          <ul data-categorie="plat"></ul>
+        </div>
+      </div>
+      <noscript>
+        <div class="colonnes">
+          <div>
+            <h3>Bières et cidre</h3>
+            <ul>
+              <li><span class="nom">Pigala Blonde</span><span class="desc">Pression maison, légère et ronde, 25 cl</span><span class="prix">3,50 €</span></li>
+              <li><span class="nom">Houblonnière IPA</span><span class="desc">Amère et fruitée, brassée à Montreuil, 33 cl</span><span class="prix">6,50 €</span></li>
+              <li><span class="nom">Blanche du Métro</span><span class="desc">Trouble, notes d'agrumes, 33 cl</span><span class="prix">5,50 €</span></li>
+              <li><span class="nom">Cidre brut</span><span class="desc">Pression, 25 cl</span><span class="prix">4,00 €</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>À manger</h3>
+            <ul>
+              <li><span class="nom">Burger du Capitaine</span><span class="desc">Steak haché, cheddar, oignons confits, frites maison</span><span class="prix">15,00 €</span></li>
+              <li><span class="nom">Pizza Margherita</span><span class="desc">Tomate, mozzarella, basilic</span><span class="prix">11,00 €</span></li>
+              <li><span class="nom">Tapas du jour</span><span class="desc">Trois assiettes à partager, selon le marché</span><span class="prix">12,00 €</span></li>
+              <li><span class="nom">Planche mixte</span><span class="desc">Charcuterie et fromages, pour deux</span><span class="prix">18,00 €</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="attente">Carte complète au comptoir.</p>
+      </noscript>
+      <p class="encadre">Happy hour du mardi au vendredi, 17 h à 19 h, en terrasse : la pression à 2,50 € le 25 cl, le pichet à 10 €.</p>
+    </section>
+
+    <section class="horaires" id="horaires" aria-labelledby="horaires-titre">
+      <h2 id="horaires-titre">Horaires et soirées</h2>
+      <table>
+        <caption>Horaires d'ouverture</caption>
+        <thead>
+          <tr><th scope="col">Jour</th><th scope="col">Horaires</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Lundi</th><td>Fermé</td></tr>
+          <tr><th scope="row">Mardi au samedi</th><td>11 h 30 à minuit</td></tr>
+          <tr><th scope="row">Dimanche</th><td>11 h à 16 h, brunch</td></tr>
+        </tbody>
+      </table>
+      <ul class="soirees">
+        <li><strong>Happy hour</strong> en terrasse, du mardi au vendredi, 17 h à 19 h</li>
+        <li><strong>Karaoké</strong> le jeudi, 20 h à 23 h</li>
+        <li><strong>Brunch</strong> le dimanche, 11 h à 16 h</li>
+      </ul>
+    </section>
+
+    <section class="avis" id="avis" aria-labelledby="avis-titre">
+      <h2 id="avis-titre">Ils en parlent</h2>
+      <div class="avis-liste">
+        <figure>
+          <blockquote>
+            <p>Le burger du Capitaine et une blonde en terrasse, un jeudi, avec le karaoké qui commence derrière. On est revenus le lendemain.</p>
+          </blockquote>
+          <figcaption>Sonia, septembre</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            <p>Brunch du dimanche copieux, service rapide, prix honnêtes pour Montreuil.</p>
+          </blockquote>
+          <figcaption>Karim, octobre</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            <p>Une brasserie de quartier comme on n'en fait plus : le patron passe aux tables, la carte est courte et bonne.</p>
+          </blockquote>
+          <figcaption>Léa, octobre</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="venir" id="venir" aria-labelledby="venir-titre">
+      <div class="venir-texte">
+        <h2 id="venir-titre">Venir</h2>
+        <address>
+          12 rue des Houblonnières, 93100 Montreuil<br>
+          Métro Croix de Chavaux (ligne 9), 3 minutes à pied<br>
+          <a href="tel:+33199001234">01 99 00 12 34</a>
+        </address>
+      <!-- DÉBUT plan-acces -->
+      <figure class="plan-acces">
+        <svg viewBox="0 0 320 110" role="img" aria-label="Schéma sans échelle : du métro Croix de Chavaux, ligne 9, au Pigala, 12 rue des Houblonnières, 3 minutes à pied.">
+          <line class="plan-acces__trajet" x1="70" y1="50" x2="260" y2="50"/>
+          <circle class="plan-acces__metro" cx="70" cy="50" r="16"/>
+          <text class="plan-acces__m" x="70" y="56" text-anchor="middle">M</text>
+          <text x="70" y="94" text-anchor="middle">Croix de Chavaux (9)</text>
+          <text x="165" y="40" text-anchor="middle">3 min à pied</text>
+          <rect class="plan-acces__lieu" x="244" y="34" width="32" height="32" rx="6"/>
+          <text x="260" y="94" text-anchor="middle">Le Pigala</text>
+        </svg>
+        <figcaption>Schéma sans échelle : le tracé des rues n'est pas dans le brief. <a href="https://www.openstreetmap.org/search?query=12%20rue%20des%20Houblonni%C3%A8res%2C%2093100%20Montreuil" target="_blank" rel="noopener">Ouvrir le plan dans OpenStreetMap</a> (nouvel onglet)</figcaption>
+      </figure>
+      <!-- FIN plan-acces -->
+        <p>Sur place ou à emporter. Pour la livraison, les plateformes habituelles.</p>
+      </div>
+      <div class="photo-attente" aria-hidden="true">Photo de la terrasse, à venir</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Le Pigala, 12 rue des Houblonnières, 93100 Montreuil. Mentions légales à venir.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

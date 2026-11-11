@@ -40,7 +40,14 @@ Notez l'outil et le modèle. Puis **ne recopiez rien tel quel**. Pour chaque rè
 
 ### Étape 3 : écrire votre charte (15 min)
 
-Dans `exercices/25-charte/depart/modele-charte.md`, remplissez le tableau : dix règles au plus, chacune avec **qui**, **contrôle**, **preuve**. Vos règles viennent de votre journée : les failles de l'exercice 21, la fiche de l'exercice 19, la grille de l'exercice 24, la décision de l'exercice 22. Remplissez la partie « Comment nous suivons les usages » avec un outil de la partie B de `tableau-normes.md` que quelqu'un lit vraiment, ou écrivez « à décider » : la commande `/usage` de Claude Code et les jauges de Copilot n'ont pas été vérifiées à l'écran pour cette formation, ne les citez qu'après les avoir vues.
+Dans `exercices/25-charte/depart/modele-charte.md`, remplissez le tableau : dix règles au plus, chacune avec **qui**, **contrôle**, **preuve**. Vos règles viennent de votre journée : les failles de l'exercice 21, la fiche de l'exercice 19, la grille de l'exercice 24, la décision de l'exercice 22.
+
+Deux exemples de règles qui se vérifient, avec leur preuve (les vôtres seront différentes) :
+
+- Chaque merge request passe l'analyse SonarQube avant revue humaine (preuve : le rapport Sonar lié à la MR).
+- Le code classé sensible n'est envoyé qu'à un modèle hébergé sur un serveur interne (preuve : la configuration du harnais pointe vers l'adresse interne).
+
+Remplissez la partie « Comment nous suivons les usages » avec un outil de la partie B de `tableau-normes.md` que quelqu'un lit vraiment, ou écrivez « à décider » : la commande `/usage` de Claude Code et les jauges de Copilot n'ont pas été vérifiées à l'écran pour cette formation, ne les citez qu'après les avoir vues.
 
 Renommez le fichier quand vous avez fini, depuis la racine :
 
@@ -76,7 +83,7 @@ git add exercices/25-charte AGENTS.md .claude
 git commit -m "E25 : charte d'usage de l'IA et une règle testée"
 ```
 
-Résultat attendu : une ligne « files changed » qui cite `charte-ia.md`. Si `AGENTS.md` ou `.claude` n'ont pas changé, `git add` ne dit rien. Une erreur « pathspec » veut dire que `.claude` n'existe pas : retirez-le de la ligne.
+Résultat attendu : une ligne « files changed » qui cite `charte-ia.md`. Si `AGENTS.md` ou `.claude` n'ont pas changé, `git add` ne dit rien.
 
 ## Livrable
 

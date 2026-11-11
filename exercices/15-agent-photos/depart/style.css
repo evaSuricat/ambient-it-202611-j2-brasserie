@@ -1,0 +1,123 @@
+/* Le Pigala : page refaite d'après la maquette (exercice 8). Couleurs de l'enseigne. */
+:root {
+  --orange: #F26B1D;
+  --bleu: #1D2A44;
+  --creme: #FFF6E9;
+  --vert: #5C8A3A;
+  --orange-fonce: #B84A0C;   /* boutons : blanc sur cet orange = 5,2 pour 1 (E10) */
+  --vert-fonce: #3F6128;     /* encadré : blanc sur ce vert = 7,1 pour 1 (E10) */
+  --texte: #1D2A44;
+  --largeur: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--texte);
+  background: var(--creme);
+  line-height: 1.5;
+}
+
+h1, h2, h3, .logo, .bouton, nav, .pictos strong {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+h2 { font-size: 1.7rem; margin-top: 0; }
+
+/* Focus visible au clavier, partout (E10) */
+a:focus-visible, .bouton:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
+.entete a:focus-visible, footer a:focus-visible { outline-color: var(--creme); }
+
+/* Lien d'évitement, visible au clavier seulement */
+.evitement {
+  position: absolute; left: -999px; top: 0;
+  background: var(--bleu); color: var(--creme); padding: 0.5rem 1rem;
+}
+.evitement:focus { left: 0; z-index: 10; }
+
+/* En-tête */
+.entete {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--bleu);
+  color: var(--creme);
+}
+.logo { margin: 0; font-weight: 700; font-size: 1.4rem; }
+.logo a { color: var(--orange); text-decoration: none; }
+.entete nav { display: flex; gap: 1rem; margin-left: auto; }
+.entete nav a { color: var(--creme); text-decoration: none; }
+.entete nav a:hover, .entete nav a:focus { text-decoration: underline; }
+
+.bouton {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--orange-fonce);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.bouton:hover, .bouton:focus { background: var(--bleu); }
+.lien { margin-left: 1rem; color: var(--bleu); font-weight: 700; }
+
+/* Sections */
+main > section { padding: 3rem 1.5rem; max-width: var(--largeur); margin: 0 auto; }
+
+.heros { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
+.heros h1 { font-size: 2.3rem; margin: 0 0 0.5rem; line-height: 1.15; }
+.accroche { font-size: 1.2rem; max-width: 36rem; }
+
+.photo-attente {
+  min-height: 240px;
+  display: grid; place-items: center;
+  background: #e6dccc; color: var(--bleu);
+  border: 2px dashed var(--bleu); border-radius: 12px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.esprit { background: #fff; max-width: none; }
+.esprit .contenant { max-width: var(--largeur); margin: 0 auto; }
+.pictos { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.pictos li { padding: 1rem; background: var(--creme); border-radius: 12px; }
+.pictos .picto { color: var(--orange); margin-right: 0.5rem; }
+.pictos strong { display: block; }
+
+.carte .colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.carte h3 { margin-bottom: 0.5rem; }
+.carte ul { list-style: none; padding: 0; margin: 0; }
+.carte li { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; padding: 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
+.carte .nom { grid-column: 1; font-weight: 700; }
+.carte .desc { grid-column: 1; font-size: 0.95rem; }
+.carte .prix { grid-column: 2; grid-row: 1 / span 2; align-self: start; font-weight: 700; white-space: nowrap; }
+.encadre { margin-top: 1.5rem; padding: 1rem; background: var(--vert-fonce); color: #fff; border-radius: 8px; }
+
+.horaires table { border-collapse: collapse; margin-bottom: 1.5rem; min-width: 18rem; }
+.horaires caption { text-align: left; font-weight: 700; padding-bottom: 0.5rem; }
+.horaires th, .horaires td { text-align: left; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
+.soirees { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.soirees li { padding: 1rem; background: #fff; border-radius: 12px; border-left: 6px solid var(--orange); }
+
+.venir { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+/* Ils en parlent (E13) */
+.avis-liste { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.avis figure { margin: 0; padding: 1rem 1.25rem; background: #fff; border-radius: 12px; border-left: 6px solid var(--orange); }
+.avis blockquote { margin: 0; }
+.avis blockquote p { margin: 0 0 0.75rem; }
+.avis figcaption { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; font-size: 0.95rem; }
+
+address { font-style: normal; }
+address a { color: var(--bleu); }
+
+footer { padding: 1.5rem; background: var(--bleu); color: var(--creme); text-align: center; font-size: 0.9rem; }
+footer a { color: var(--creme); }
+
+@media (max-width: 700px) {
+  .entete { flex-wrap: wrap; }
+  .entete nav { margin-left: 0; width: 100%; }
+  .heros, .venir { grid-template-columns: 1fr; }
+  .heros h1 { font-size: 1.8rem; }
+  .photo-attente { min-height: 160px; }
+}

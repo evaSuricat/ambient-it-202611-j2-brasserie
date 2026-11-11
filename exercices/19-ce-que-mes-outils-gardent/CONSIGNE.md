@@ -28,7 +28,7 @@ Résultat attendu : « nothing to commit » est normal si rien n'a changé depui
 
 ### Étape 1 : lire le tableau A
 
-Ouvrez `exercices/19-ce-que-mes-outils-gardent/depart/fiche-outils.md`. Le tableau A donne les durées annoncées par Anthropic, GitHub et OpenAI, avec la date de chaque page. Repérez deux phrases à retenir : celle qui dit qu'un pouce peut servir à l'entraînement même après refus (OpenAI), et celle qui dit que la durée pour le compte individuel GitHub n'a pas été trouvée. Une durée absente de la documentation ne veut pas dire « zéro ».
+Ouvrez `exercices/19-ce-que-mes-outils-gardent/depart/fiche-outils.md`. Le tableau A donne les durées annoncées par Anthropic, GitHub et OpenAI, avec la date de chaque page. Repérez deux phrases à retenir : celle qui dit qu'un pouce peut servir à l'entraînement même après refus (OpenAI), et celle qui dit que la durée pour le compte individuel GitHub n'a pas été trouvée. Une durée absente de la documentation ne veut pas dire « zéro ». Retenez aussi ceci pour les deux colonnes ajoutées : la ZDR (zéro conservation de données) est une clause du fournisseur, celui qui fait tourner le modèle, jamais une option du harnais, l'outil dans VS Code. Changer d'outil dans VS Code ne change donc pas ce que le fournisseur garde ; seul le contrat ou l'accord avec le fournisseur le change.
 
 ### Étape 2 : chercher les réglages, outil par outil
 

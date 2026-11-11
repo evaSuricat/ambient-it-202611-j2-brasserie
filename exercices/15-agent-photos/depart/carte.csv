@@ -1,0 +1,21 @@
+categorie,nom,description,prix
+biere,Pigala Blonde,"Pression maison, légère et ronde, 25 cl",3.50
+biere,Pigala Blonde 50 cl,"La même, en grand",6.00
+biere,Houblonnière IPA,"Amère et fruitée, brassée à Montreuil, 33 cl",6.50
+biere,Blanche du Métro,"Trouble, notes d'agrumes, 33 cl",5.50
+biere,Ambrée de Chavaux,"Caramel et pain grillé, 33 cl",6.00
+biere,Stout du Capitaine,"Noire, café et chocolat, 33 cl",6.50
+biere,Sans alcool,"Blonde sans alcool, 33 cl",4.50
+biere,Cidre brut,"Pression, 25 cl",4.00
+biere,Pichet de blonde,"1 litre à partager",14.00
+biere,Planche dégustation,"Quatre bières de 12 cl",9.00
+plat,Salade Pigala,"Chèvre chaud, noix, miel, pain grillé",12.50
+plat,Burger du Capitaine,"Steak haché, cheddar, oignons confits, frites maison",15.00
+plat,Burger végétarien,"Galette de haricots rouges, avocat, frites maison",14.00
+plat,Pizza Margherita,"Tomate, mozzarella, basilic",11.00
+plat,Pizza Chavaux,"Tomate, chorizo, poivrons, oignons rouges",14.00
+plat,Pizza quatre fromages,"Mozzarella, chèvre, bleu, comté",13.50
+plat,Tapas du jour,"Trois assiettes à partager, selon le marché",12.00
+plat,Planche mixte,"Charcuterie et fromages, pour deux",18.00
+plat,Frites maison,"Avec la sauce du jour",5.00
+plat,Dessert du jour,"Demandez au comptoir",6.00
