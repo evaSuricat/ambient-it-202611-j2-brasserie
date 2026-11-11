@@ -60,7 +60,7 @@ python -m venv .venv
 .venv\Scripts\Activate.ps1
 ```
 
-Résultat attendu : aucun message pour la première ; pour la seconde, l'invite du terminal commence par `(.venv)`. Si PowerShell répond que l'exécution de scripts est désactivée, ne changez pas ce réglage : demandez à la formatrice, ou passez par le chemin direct `.venv\Scripts\python.exe -m pip install pillow`.
+Résultat attendu : aucun message pour la première ; pour la seconde, l'invite du terminal commence par `(.venv)`. Si PowerShell répond que l'exécution de scripts est désactivée, ne changez pas ce réglage : demandez à la formatrice, ou passez par le chemin direct `.venv\Scripts\python.exe -m pip install pillow`. Si l'activation est bloquée, le `python -m pip freeze` de l'étape suivante utiliserait le Python global : prenez alors la variante en chemin direct, donnée plus bas.
 
 Sous **Ubuntu** :
 
@@ -86,6 +86,18 @@ python -m pip freeze > exercices/15-agent-photos/depart/requirements.txt
 
 Résultat attendu : une ligne « Successfully installed pillow-... », puis un fichier `requirements.txt` qui contient une ligne `pillow==...`. (`python3` à la place de `python` sous Ubuntu si `python` n'existe pas ; dans un `.venv` activé, `python` existe toujours.)
 
+**Si l'activation du `.venv` est bloquée** (Windows), utilisez le Python du `.venv` par son chemin, pour l'installation comme pour le gel des versions :
+
+```
+.venv\Scripts\python.exe -m pip install pillow
+```
+
+```
+.venv\Scripts\python.exe -m pip freeze > exercices/15-agent-photos/depart/requirements.txt
+```
+
+Résultat attendu : les mêmes que ci-dessus, une ligne « Successfully installed pillow-... », puis un `requirements.txt` qui contient une ligne `pillow==...`. Sans cette variante, un `python -m pip freeze` lancé hors du `.venv` écrirait la liste du Python global, bien plus longue.
+
 ### Étape 3 : vérifier dans Chrome
 
 Dans un **deuxième terminal** (bouton **+** du panneau Terminal) :
@@ -102,7 +114,7 @@ pwd
 python servir.py
 ```
 
-Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/15-agent-photos/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Les images s'affichent. F12, onglet Réseau, réduire la largeur de la fenêtre : la taille de l'image chargée change (1600, puis 960, puis 480 pixels). « Ce site est inaccessible » : le serveur n'est pas lancé ; un 404 ou un 500 dans la console : le serveur tourne et l'adresse ou le code est faux.
+Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/15-agent-photos/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Les images s'affichent. Réduisez d'abord la largeur de la fenêtre, puis F12, onglet Réseau, cochez « Disable cache » et rechargez la page : la variante chargée (480, 960 ou 1600 pixels) dépend de la largeur. Sur un écran à haute densité, Chrome choisit souvent la plus grande : c'est normal. « Ce site est inaccessible » : le serveur n'est pas lancé ; un 404 ou un 500 dans la console : le serveur tourne et l'adresse ou le code est faux.
 
 ### Étape 4 : lire les textes alternatifs
 
@@ -130,7 +142,7 @@ git add exercices/15-agent-photos
 git commit -m "Photos : trois tailles par image, galerie et images responsives"
 ```
 
-Remplacez le message par celui de l'agent, relu et corrigé, s'il est meilleur. Résultat attendu : une ligne « files changed » qui cite `redimensionner.py`, `requirements.txt` et `index.html`. Un commit se défait : rien n'est perdu.
+Remplacez le message par celui de l'agent, relu et corrigé, s'il est meilleur. Résultat attendu : une ligne « N files changed » (le nombre de fichiers touchés) et la liste des fichiers créés. `git show --stat` affiche la liste complète, y compris `redimensionner.py`, `requirements.txt` et `index.html`. Un commit se défait : rien n'est perdu.
 
 ## Livrable
 

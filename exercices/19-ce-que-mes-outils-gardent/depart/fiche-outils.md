@@ -2,9 +2,9 @@
 
 Fiche personnelle. Aucune capture, aucune donnée personnelle ici : on note des réponses, pas du contenu de conversation.
 
-## A. Les durées annoncées par les éditeurs (sources lues le 02/11/2026)
+## A. Les durées annoncées par les éditeurs (sources lues le 02/11 et le 11/11/2026)
 
-Ce tableau est fourni. Il dit ce que les pages officielles disent, avec leur date. Une durée écrite ici n'est pas une garantie : relisez la page avant de vous y fier. Les colonnes « Coût par siège » et « ZDR » sont à « à vérifier » : la formatrice les complétera d'après des sources datées.
+Ce tableau est fourni. Il dit ce que les pages officielles disent, avec leur date. Une durée écrite ici n'est pas une garantie : relisez la page avant de vous y fier. Les colonnes « Coût par siège » et « ZDR » sont remplies pour Anthropic (11/11/2026) et restent à vérifier pour GitHub et OpenAI.
 
 | Éditeur | Source | Ce que les pages lues disent | Coût par siège | ZDR (zéro conservation) : oui / non / sur demande |
 |---|---|---|---|---|

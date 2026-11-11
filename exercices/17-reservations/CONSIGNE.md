@@ -84,7 +84,7 @@ git add exercices/17-reservations
 git commit -m "E17 : formulaire de réservation branché sur /api/reservations"
 ```
 
-Résultat attendu : une ligne « files changed » qui cite `index.html`, `css/reservation.css` et la base `carte.db`. Un commit se défait : rien n'est perdu.
+Résultat attendu : une ligne « N files changed » et la liste des fichiers créés. `git show --stat` affiche la liste complète, dont `index.html`, `css/reservation.css` et la base `carte.db`. Un commit se défait : rien n'est perdu.
 
 ## Livrable
 

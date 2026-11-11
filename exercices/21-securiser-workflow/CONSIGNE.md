@@ -88,7 +88,7 @@ Utilise le sous-agent relecteur-code sur exercices/21-securiser-workflow/depart/
 
 Résultat attendu : Claude Code délègue au sous-agent d'après sa description, et la réponse montre qu'un sous-agent a tourné (une ligne de tâche déléguée à `relecteur-code`, dont l'aspect dépend de la version). Vous obtenez une liste avec numéros de ligne, une gravité de 1 à 3 et une correction par point, puis ce qu'il n'a pas pu vérifier. Si la réponse vient de Claude seul, sans mention du sous-agent, redites la même phrase en commençant par « Délègue à ». La commande `/agents` n'est pas nécessaire : selon la documentation lue le 11/11/2026, elle affiche seulement un rappel d'éditer `.claude/agents/` sur les versions récentes, et ouvre un assistant avec la liste des agents sur les anciennes.
 
-Ouvrez `exercices/21-securiser-workflow/depart/tri-revue.md`. Dans la **partie A**, recopiez ses trois premières propositions et triez-les : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Notez l'outil et le modèle. Sans abonnement Claude Code : dans Copilot, sélectionnez le contenu de `servir.py`, clic droit, « Review and Comment » (si vous ne voyez pas ce menu, cherchez une entrée de revue dans le menu), même tri ; la revue peut ne rien dire. Le sous-agent propose, vous décidez : il peut oublier un point ou en inventer un. **Ne corrigez rien encore** : c'est l'objet des étapes suivantes.
+Ouvrez `exercices/21-securiser-workflow/depart/tri-revue.md`. Dans la **partie A**, recopiez ses trois premières propositions et triez-les : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Notez l'outil et le modèle. Sans abonnement Claude Code : dans Copilot, sélectionnez le contenu de `servir.py`, clic droit, l'entrée de revue de Copilot (son libellé exact, « Review » ou « Review and Comment », est à relever à l'écran), même tri ; la revue peut ne rien dire. Le sous-agent propose, vous décidez : il peut oublier un point ou en inventer un. **Ne corrigez rien encore** : c'est l'objet des étapes suivantes.
 
 ### Étape 4 : préparer un extrait à envoyer à un modèle
 
@@ -218,7 +218,7 @@ La documentation (lue le 02/11/2026) dit que la règle ne couvre pas une command
 
 ### Étape 9 : la revue
 
-Avec les correctifs en place et rien d'autre de modifié (committez les exercices précédents d'abord). Dans **Claude Code**, la commande `/security-review` relit ce qui n'est pas encore committé ; la langue de sa réponse est à vérifier (l'anglais est possible, aucune source n'a été lue sur ce point). Avec **Copilot Free**, sélectionnez le contenu de `servir.py`, clic droit, **Review** (menu constaté à la répétition du jour 1 ; si vous ne le voyez pas, cherchez une entrée de revue dans ce menu) : la revue peut ne rien dire. Ouvrez `tri-revue.md` et, dans la **partie B**, triez chaque remarque : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Si l'outil n'a rien dit, répondez à la dernière question du fichier.
+Avec les correctifs en place. Dans **Claude Code**, `/security-review` : demandez la revue de `servir.py` nommément, par exemple `/security-review exercices/21-securiser-workflow/depart/servir.py` ; si la commande relit plus que ce fichier, ne triez que ce qui le concerne. La langue de sa réponse est à vérifier (l'anglais est possible, aucune source n'a été lue sur ce point). Avec **Copilot Free**, sélectionnez le contenu de `servir.py`, clic droit, l'entrée de revue de Copilot (son libellé exact, « Review » ou « Review and Comment », est à relever à l'écran) : la revue peut ne rien dire. Ouvrez `tri-revue.md` et, dans la **partie B**, triez chaque remarque : juste, faux ou à ignorer, pourquoi, comment vous l'avez vérifié. Si l'outil n'a rien dit, répondez à la dernière question du fichier.
 
 Cette revue relit la version **corrigée** : elle devrait trouver peu ou rien. Comparez avec la partie A, faite avant les correctifs : qu'est-ce qui a disparu, qu'est-ce qui reste ? Ce qui reste est-il juste ?
 
@@ -258,7 +258,7 @@ Résultat attendu : aucun message, et `servir.py` retrouve son état committé. 
 
 ## Livrable
 
-Les six tests au vert, `extrait-anonyme.md`, `tri-revue.md` (parties A et B), `AGENTS.md` complété, un ou deux commits : avant, quand quelque chose a changé, et après.
+Les six tests au vert, `extrait-anonyme.md`, `tri-revue.md` (parties A et B), `AGENTS.md` complété, deux commits : l'état avant et le résultat.
 
 ## Ce qu'on retient
 

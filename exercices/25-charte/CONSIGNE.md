@@ -49,13 +49,13 @@ Deux exemples de règles qui se vérifient, avec leur preuve (les vôtres seront
 
 Remplissez la partie « Comment nous suivons les usages » avec un outil de la partie B de `tableau-normes.md` que quelqu'un lit vraiment, ou écrivez « à décider » : la commande `/usage` de Claude Code et les jauges de Copilot n'ont pas été vérifiées à l'écran pour cette formation, ne les citez qu'après les avoir vues.
 
-Renommez le fichier quand vous avez fini, depuis la racine :
+Copiez le modèle avant de le remplir, depuis la racine :
 
 ```
 cp exercices/25-charte/depart/modele-charte.md exercices/25-charte/depart/charte-ia.md
 ```
 
-(Faites la copie avant de remplir si vous préférez travailler directement dans `charte-ia.md`.) Résultat attendu : un fichier `charte-ia.md` d'une page, dix lignes au plus dans le tableau.
+Remplissez ensuite `charte-ia.md` et laissez `modele-charte.md` intact : `cp` copie, le modèle d'origine ne doit être ni modifié ni committé. Résultat attendu : un fichier `charte-ia.md` d'une page, dix lignes au plus dans le tableau.
 
 ### Étape 4 : tester une règle (10 min)
 

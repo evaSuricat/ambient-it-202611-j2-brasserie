@@ -17,11 +17,11 @@ Les normes ci-dessous sont des **repères**. Les textes payants n'ont pas été 
 | Outil | Ce qu'on en sait | Vérifié |
 |---|---|---|
 | Claude Code, export OpenTelemetry | La documentation dit que Claude Code exporte des métriques (sessions, coût, jetons, lignes de code modifiées) et des événements (prompts, résultats d'outils, requêtes) quand la variable `CLAUDE_CODE_ENABLE_TELEMETRY=1` est posée. Page `https://code.claude.com/docs/en/monitoring-usage`, lue le 02/11/2026 en partie (les 100 000 premiers caractères) | Documentation, pas essayé |
-| Claude Code, commande `/usage` | Citée dans le plan de la formation | **Non vérifiée à l'écran** : à tester avant de l'écrire dans une charte |
-| Copilot, jauges d'usage | Citées dans le plan de la formation | **Non vérifiées à l'écran** : à chercher dans l'interface avant de l'écrire dans une charte |
+| Claude Code, commande `/usage` | Commande de Claude Code, non vérifiée à l'écran pour cette formation | **À tester** : avant de l'écrire dans une charte |
+| Copilot, jauges d'usage | Jauges de Copilot, non vérifiées à l'écran pour cette formation | **À chercher** : dans l'interface avant de l'écrire dans une charte |
 
 Une charte qui promet « nous suivons les usages » doit nommer l'outil que quelqu'un lit vraiment.
 
 ## C. Un témoignage : un crochet qui bloque l'installation
 
-La formatrice a mis en place un crochet (« hook ») : une commande que l'outil exécute automatiquement à un moment précis, ici avant qu'une installation soit lancée. La documentation de Claude Code décrit les hooks comme des commandes shell définies par l'utilisateur, exécutées à des points précis du cycle de vie de l'outil. **[Description du crochet de la formatrice et de son faux positif : à ajouter par elle avant la formation.]**
+Témoignage de la formatrice, à l'oral : un crochet (hook) qui bloque une installation, et son faux positif.

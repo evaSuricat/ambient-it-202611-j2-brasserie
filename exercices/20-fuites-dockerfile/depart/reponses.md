@@ -1,6 +1,6 @@
 # Mes réponses d'E20
 
-Écrivez vos réponses ici, au moment où la consigne le demande, avant de regarder la preuve. Ce fichier se committe avec `Dockerfile.corrige` et `.dockerignore`.
+Écrivez vos réponses ici, au moment où la consigne le demande, avant de regarder la preuve. Ce fichier se committe à l'étape 7, avec `Dockerfile.corrige` et `.dockerignore` si vous avez fait l'étape 6.
 
 ## Étape 1 : où un secret peut-il rester dans l'image ?
 

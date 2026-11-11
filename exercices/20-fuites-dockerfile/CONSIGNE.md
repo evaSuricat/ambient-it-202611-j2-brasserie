@@ -10,19 +10,7 @@ Une image Docker se publie : celui qui la télécharge reçoit tout ce qu'elle c
 
 **Docker n'est exigé de personne.** Tout se fait en lisant les fichiers. Les jetons sont de faux jetons visiblement faux. Si vous avez Docker, un chemin facultatif à l'étape 5 refait le relevé ; il télécharge l'image de base `ubuntu:24.04` (environ 78 Mo une fois installée). La formatrice fait la démonstration sur son poste sans afficher la liste de ses images.
 
-### Étape 0 : enregistrer le point de départ
-
-Depuis la racine de `stagiaire_J2` :
-
-```
-git add exercices/20-fuites-dockerfile
-```
-
-```
-git commit -m "E20 : état avant la correction du Dockerfile"
-```
-
-Résultat attendu : « nothing to commit » est normal si rien n'a changé depuis le clonage.
+Dix minutes pour huit gestes, c'est court : un **seul commit**, à la fin (étape 7), et l'étape 6 (le prompt à l'outil) ne se fait que si le temps le permet. Les étapes 1 à 4 sont le cœur de l'exercice.
 
 ### Étape 1 : lire le Dockerfile, sans l'IA
 
@@ -60,7 +48,9 @@ docker rmi pigala-demo:fuite
 
 Résultat attendu : le deuxième affiche les mêmes lignes que `historique-docker.txt`. Si le démon répond « Cannot connect to the Docker daemon », Docker Desktop n'est pas démarré : sautez cette étape, rien n'a été construit. N'utilisez jamais `docker images` devant le groupe : votre poste peut afficher les images d'un autre projet.
 
-### Étape 6 : écrire la version corrigée
+### Étape 6 (seulement si le temps le permet) : écrire la version corrigée
+
+Si le temps manque, passez directement à l'étape 7 : les réponses des étapes 1 et 3 sont l'essentiel, la version corrigée peut se faire plus tard.
 
 Dans Claude Code ou Copilot en mode Agent (vérifiez le sélecteur après un « New Chat ») :
 
@@ -70,9 +60,9 @@ Dans exercices/20-fuites-dockerfile/depart/, lis le Dockerfile et historique-doc
 
 Relisez le résultat avec votre grille : le jeton est-il écrit quelque part en clair ? Reste-t-il un `ARG` ou un `ENV` qui porte une valeur secrète ? Le `COPY` est-il limité à ce qui sert ? L'outil peut corriger deux fuites sur trois et en oublier une : c'est à vous de compter.
 
-### Étape 7 : enregistrer
+### Étape 7 : enregistrer (le seul commit de l'exercice)
 
-Depuis la racine :
+Depuis la racine de `stagiaire_J2` :
 
 ```
 git add exercices/20-fuites-dockerfile
@@ -82,11 +72,11 @@ git add exercices/20-fuites-dockerfile
 git commit -m "E20 : réponses, Dockerfile corrigé et .dockerignore"
 ```
 
-Résultat attendu : une ligne « files changed » qui cite `reponses.md`, `Dockerfile.corrige` et `.dockerignore`.
+Résultat attendu : une ligne « N files changed ». `git show --stat` affiche la liste des fichiers : `reponses.md`, et `Dockerfile.corrige` et `.dockerignore` si vous avez fait l'étape 6. « nothing to commit » signifie qu'aucun fichier n'a changé : `reponses.md` est-il rempli et enregistré dans l'éditeur ?
 
 ## Livrable
 
-`Dockerfile.corrige` et `.dockerignore`, plus `reponses.md` avec vos réponses des étapes 1 et 3.
+`reponses.md` avec vos réponses des étapes 1 et 3, et un seul commit. `Dockerfile.corrige` et `.dockerignore` s'y ajoutent si le temps a permis l'étape 6.
 
 ## Ce qu'on retient
 

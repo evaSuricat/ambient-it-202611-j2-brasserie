@@ -20,7 +20,7 @@ Sur un brouillon (papier ou fichier hors du dépôt), notez les **quatre points*
 
 ### Étape 3 : mise en commun à l'oral (4 minutes)
 
-La formatrice fait le tour de la salle : chaque point nommé est discuté, avec son moyen de vérification. Elle ouvre ce qu'il faut ouvrir à l'écran (la page d'un index de paquets, une page de documentation, un domaine). Comparez votre liste à ce qui est dit : un point manqué n'est pas une faute, c'est l'intérêt de l'exercice.
+La formatrice fait le tour de la salle : chaque point nommé est discuté, avec son moyen de vérification. Elle ouvre la page de l'index des paquets et l'adresse de documentation, et montre le domaine du `curl` dans le fichier. Comparez votre liste à ce qui est dit : un point manqué n'est pas une faute, c'est l'intérêt de l'exercice.
 
 Résultat attendu : à la fin, la salle s'accorde sur les quatre points, et sur le fait que certains éléments de la réponse sont justes (ils donnent confiance dans le faux).
 

@@ -40,11 +40,13 @@ Résultat attendu : `Ran 4 tests`, puis `FAILED (failures=4)` : `purger.py` n'ex
 
 ### Étape 2 : remplir la fiche à partir du code
 
-Copiez le modèle, depuis la racine, puis ouvrez la copie :
+Vous êtes toujours dans `exercices/23-fiche-et-purge/depart` (étape 1). Copiez le modèle depuis ce dossier, puis ouvrez la copie :
 
 ```
-cp exercices/23-fiche-et-purge/depart/fiche-modele.md exercices/23-fiche-et-purge/depart/fiche-traitement.md
+cp fiche-modele.md fiche-traitement.md
 ```
+
+Résultat attendu : aucun message, et `fiche-traitement.md` apparaît dans `depart/`, à côté de `fiche-modele.md` (`pwd` doit finir par `exercices/23-fiche-et-purge/depart`). Sous PowerShell, `cp` est aussi reconnu ; la forme longue est `Copy-Item fiche-modele.md fiche-traitement.md`.
 
 Remplissez les sections 1 à 4 et 6 **en lisant le code**, pas de mémoire : `index.html` (que demande le formulaire, et sont-ils tous nécessaires ?), `servir.py` (qui reçoit, qui écrit où), `gerant.py` (qui lit), `donnees/` (où vit la base). Le champ « commentaire » est un texte libre : l'exercice 21 y a montré une allergie, un nom de tiers, un numéro de téléphone. Écrivez ce qu'il peut contenir. Écrivez « à décider » quand vous ne savez pas.
 
@@ -118,11 +120,11 @@ git add exercices/23-fiche-et-purge
 git commit -m "E23 : fiche de traitement et purge des réservations"
 ```
 
-Résultat attendu : une ligne « files changed » qui cite `fiche-traitement.md`, `purger.py` et `test_purge.py`.
+Résultat attendu : une ligne « N files changed » et la liste des fichiers créés. `git show --stat` affiche la liste complète, dont `fiche-traitement.md`, `purger.py` et `test_purge.py`.
 
 ## Livrable
 
-`fiche-traitement.md`, `purger.py` avec ses quatre tests au vert, un ou deux commits : avant, quand quelque chose a changé, et après.
+`fiche-traitement.md`, `purger.py` avec ses quatre tests au vert, deux commits : l'état avant et le résultat.
 
 ## Ce qu'on retient
 
