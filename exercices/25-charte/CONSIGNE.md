@@ -45,7 +45,7 @@ Dans `exercices/25-charte/depart/modele-charte.md`, remplissez le tableau : dix 
 Deux exemples de règles qui se vérifient, avec leur preuve (les vôtres seront différentes) :
 
 - Chaque merge request passe l'analyse SonarQube avant revue humaine (preuve : le rapport Sonar lié à la MR).
-- Le code classé confidentiel n'est envoyé qu'à un fournisseur choisi par l'équipe : serveur interne, ou cloud de l'entreprise en région européenne avec conservation à zéro (preuve : la configuration du harnais, fournisseur et région, relue à chaque mise à jour).
+- Le code classé confidentiel n'est envoyé qu'à un fournisseur choisi par l'équipe : serveur interne, cloud de l'entreprise en région européenne avec conservation à zéro, ou fournisseur payant en ZDR vérifié (preuve : la configuration du harnais, fournisseur et région, relue à chaque mise à jour).
 
 Remplissez la partie « Comment nous suivons les usages » avec un outil de la partie B de `tableau-normes.md` que quelqu'un lit vraiment, ou écrivez « à décider » : la commande `/usage` de Claude Code et les jauges de Copilot n'ont pas été vérifiées à l'écran pour cette formation, ne les citez qu'après les avoir vues.
 
