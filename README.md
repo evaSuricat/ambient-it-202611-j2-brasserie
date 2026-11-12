@@ -37,7 +37,7 @@ Si `python` n'existe pas sur votre poste (Mac, certains Linux), tapez `python3` 
 | 18 Avant d'exécuter | Sécurité avant exécution du code, hallucinations. Tri à l'oral, sans outil | 10 min |
 | 19 Ce que mes outils gardent de moi | Fuite de données, conservation | 15 min |
 | 20 Trois fuites dans un Dockerfile | Publication d'images Docker et confidentialité | 10 min |
-| 21 Sécuriser le workflow | Atelier officiel : requête SQL sensible, anonymisation, sous-agent de relecture | 40 min |
+| 21 Sécuriser le workflow | Atelier officiel : requête SQL sensible, anonymisation, sous-agent de relecture | 40 min, et 10 min de marge |
 | 22 À qui est ce code ? | Propriété du code, droits, licences, auditabilité. En slides et en discussion | 20 min |
 | 23 La fiche et la purge | RGPD, traçabilité, conservation | 25 min |
 | 24 Revue d'une user story | Atelier officiel : biais et risques d'une user story | 45 min |

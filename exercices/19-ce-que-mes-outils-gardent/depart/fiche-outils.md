@@ -14,7 +14,7 @@ Ce tableau est fourni. Il dit ce que les pages officielles disent, avec leur dat
 
 ## B. Ce que je trouve sur mon écran
 
-Pour chaque outil que vous utilisez, notez **où vous avez trouvé** le réglage (le chemin de menus tel que vous le voyez, pas celui de la consigne) et **ce qu'il affiche aujourd'hui** (activé, désactivé, absent). On regarde, on ne change rien, sauf choix personnel noté dans la dernière colonne. Écrivez « absent » plutôt que d'inventer.
+Pendant l'exercice, une seule colonne : **Claude** (ou GitHub Copilot si vous n'avez pas de compte Claude) ; les autres colonnes restent pour chez vous. Pour chaque question, notez **où vous avez trouvé** le réglage (le chemin de menus tel que vous le voyez, pas celui de la consigne) et **ce qu'il affiche aujourd'hui** (activé, désactivé, absent). On regarde, on ne change rien, sauf choix personnel noté dans la dernière colonne. Écrivez « absent » plutôt que d'inventer.
 
 | Question | Claude | ChatGPT | GitHub Copilot | Sans compte (écran partagé) |
 |---|---|---|---|---|

@@ -22,6 +22,18 @@ Les normes ci-dessous sont des **repères**. Les textes payants n'ont pas été 
 
 Une charte qui promet « nous suivons les usages » doit nommer l'outil que quelqu'un lit vraiment.
 
-## C. Un témoignage : un crochet qui bloque l'installation
+## C. Un témoignage : un garde-fou (hook) qui demande le GO avant toute installation
 
-Témoignage de la formatrice, à l'oral : un crochet (hook) qui bloque une installation, et son faux positif.
+Témoignage de la formatrice, écrit d'après son journal du 23/10/2026. Un hook est un petit script que Claude Code lance à un moment précis, ici juste avant chaque commande de terminal. Il n'existe pas chez les stagiaires.
+
+**La règle.** Depuis le 23/10/2026, le fichier `AGENTS.md` de son poste dit : avant d'installer un langage ou une bibliothèque, lister ce qui existe déjà, dire ce qui manque et pourquoi, attendre le GO. La règle vient de deux Python installés le même jour d'octobre 2025 sans qu'aucun projet ne dise lequel il attendait : personne ne l'a vu passer.
+
+**Le contrôle.** Une règle écrite dépend de la mémoire de l'assistant. Le jour même, elle est devenue un hook `PreToolUse` déclaré dans `.claude/settings.json` : un script PowerShell lit chaque commande avant son exécution ; s'il reconnaît une installation (`pip install`, `winget install`, `npm install -g`, `apt install`, un `.exe` silencieux, un script téléchargé envoyé droit dans un shell…), il répond « ask » et la fenêtre de permission s'affiche avec la raison, même en mode automatique. Toute autre commande passe sans rien afficher.
+
+**La preuve.** Le script est versionné dans le dépôt de la formatrice, et un jeu de treize commandes de test le rejoue après chaque modification.
+
+**Ce qui s'est passé.** Le jour même, la fenêtre s'est ouverte sur un `winget install --help` : la commande ne faisait que lire l'aide, le motif ne fait pas la différence. Le soir, un faux positif plus gênant : un compte rendu de fin de session qui *citait* les commandes de la journée dans un bloc de texte a déclenché le hook, parce qu'il lisait la commande entière, texte cité compris. Depuis, le script ignore le corps de ces blocs (les heredocs), et le cas a rejoint le jeu de tests.
+
+**Les limites, écrites plutôt que cachées.** Il laisse passer un `npm install` local à un projet (par choix : les dépendances d'un site). Une commande citée dans un message de commit peut encore le déclencher : on accepte la fenêtre. Et il ne vaut que sur ce poste : un contrôle d'équipe se commite dans le dépôt (`settings.json`), pas dans un réglage personnel.
+
+Ce que ça illustre pour votre charte : une règle avec qui (l'assistant), contrôle (le hook) et preuve (le script versionné et son jeu de tests), un faux positif corrigé, et des limites nommées.
