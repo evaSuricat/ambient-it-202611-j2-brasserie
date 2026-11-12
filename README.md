@@ -13,7 +13,7 @@ Claude Code demande un abonnement payant. Sans abonnement, chaque exercice a un 
 1. Créer un dossier `stagiaire_J2` (là où vous rangez vos dossiers de formation), l'ouvrir dans VS Code (Fichier, Ouvrir le dossier, puis « Yes, I trust the authors »), et y cloner ce dépôt depuis un terminal de VS Code, sans oublier le point final :
 
 ```
-git clone <adresse à venir> .
+git clone https://github.com/evaSuricat/ambient-it-202611-j2-brasserie.git .
 ```
 
 2. Créer sa branche de travail, une par personne :
