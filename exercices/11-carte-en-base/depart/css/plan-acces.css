@@ -1,0 +1,96 @@
+/* Le Pigala - composant « plan d'accès »
+   Contrastes (texte sur fond, minimum 4,5:1) :
+   - bleu nuit sur blanc      : environ 14:1
+   - blanc sur orange foncé   : environ 5,2:1
+   L'orange vif #F26B1D n'est utilisé que pour le repère du Pigala sur le schéma, sans texte dessus. */
+
+:root {
+  --orange-fonce: #B84A0C;
+  /* Repère du métro : disque et lettre, inversés en mode sombre. */
+  --plan-disque: var(--nuit);
+  --plan-lettre: var(--creme);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --plan-disque: var(--creme);
+    --plan-lettre: var(--nuit);
+  }
+}
+
+.plan-acces {
+  margin: 1.5rem 0;
+}
+
+.plan-acces figure {
+  margin: 0 0 1rem;
+  max-width: 32rem;
+}
+
+.plan-acces svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--surface);
+  border: 2px solid var(--texte);
+  border-radius: 0.5rem;
+}
+
+.plan-acces text {
+  fill: var(--texte);
+  font-family: var(--police);
+}
+
+.plan-acces .plan-metro-disque {
+  fill: var(--plan-disque);
+}
+
+.plan-acces .plan-metro-lettre {
+  fill: var(--plan-lettre);
+  font-weight: 700;
+}
+
+.plan-acces .plan-pigala-repere {
+  stroke: var(--texte);
+}
+
+.plan-acces .plan-etiquette {
+  font-weight: 700;
+}
+
+.plan-acces figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.plan-acces .plan-note {
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0;
+}
+
+.bouton-plan {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  background: var(--orange-fonce);
+  color: var(--blanc-casse);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 2px solid var(--orange-fonce);
+}
+
+.bouton-plan:hover {
+  background: var(--nuit);
+  border-color: var(--nuit);
+}
+
+.bouton-plan:focus-visible {
+  outline: 3px solid var(--texte);
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bouton-plan:hover {
+    border-color: var(--creme);
+  }
+}

@@ -6,7 +6,7 @@
 
 ## Ce qu'on fait
 
-Vous partez de la page fournie dans `exercices/17-reservations/depart/` (la même pour tout le monde), vous lui ajoutez un formulaire de réservation, et vous vérifiez qu'une ligne arrive bien dans la base. Le serveur et la base des réservations (30 réservations fictives) sont fournis dans `exercices/17-reservations/depart/` : l'exercice porte sur la page, pas sur le serveur. Toutes les données sont fictives (voir `exercices/17-reservations/depart/SOURCES.md`). N'écrivez jamais vos vraies coordonnées dans le formulaire.
+Vous partez de la page fournie dans `exercices/17-reservations/depart/` (la même pour tout le monde : la page de la formatrice, avec sa carte lue dans la base et ses photos), vous lui ajoutez un formulaire de réservation, et vous vérifiez qu'une ligne arrive bien dans la base. Le serveur et la base des réservations (30 réservations fictives) sont fournis dans `exercices/17-reservations/depart/` : l'exercice porte sur la page, pas sur le serveur. Toutes les données sont fictives (voir `exercices/17-reservations/depart/SOURCES.md`). N'écrivez jamais vos vraies coordonnées dans le formulaire.
 
 Claude Code demande un abonnement payant. Sans abonnement, faites les mêmes prompts dans le chat de GitHub Copilot Free (sélecteur sur **Agent**), ou suivez sur l'écran partagé de la formatrice. Mode de permissions **Manual** dans Claude Code : lisez chaque permission avant de l'accepter, une par une.
 

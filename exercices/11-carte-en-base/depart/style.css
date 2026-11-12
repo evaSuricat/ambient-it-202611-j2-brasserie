@@ -1,0 +1,410 @@
+/* Le Pigala - feuille de style
+   Couleurs de l'enseigne : orange #F26B1D, bleu nuit #1D2A44, crème #FFF6E9, vert houblon #5C8A3A.
+
+   Règles d'usage :
+   - L'orange #F26B1D n'est jamais un texte sur crème ni un fond sous un texte blanc ;
+     il sert seulement de filet décoratif (citation).
+   - Les boutons sont en orange foncé #B84A0C avec un texte blanc.
+   - Le vert houblon sert uniquement de filet décoratif, jamais de texte.
+
+   Contrastes (texte sur fond, minimum 4,5:1) :
+   - bleu nuit sur crème      : environ 13:1
+   - bleu nuit sur blanc      : environ 14:1
+   - bleu nuit sur zone photo #EADFCF : environ 10:1
+   - blanc sur orange foncé   : environ 5,2:1
+   - crème sur bleu nuit      : environ 13:1 */
+
+:root {
+  --orange: #F26B1D;
+  --nuit: #1D2A44;
+  --creme: #FFF6E9;
+  --houblon: #5C8A3A;
+  --orange-fonce: #B84A0C;
+  --blanc-casse: #FFFFFF;
+  --creme-fonce: #EADFCF;
+  --police: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --police-titre: Georgia, "Times New Roman", serif;
+
+  /* Rôles utilisés aussi par css/plan-acces.css */
+  --fond: var(--creme);
+  --texte: var(--nuit);
+  --surface: var(--blanc-casse);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--texte);
+  background: var(--blanc-casse);
+  overflow-wrap: break-word;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.conteneur {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--nuit);
+  outline-offset: 3px;
+}
+
+/* Lien d'évitement */
+.lien-evitement {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--nuit);
+  color: var(--creme);
+  font-weight: 700;
+  z-index: 20;
+}
+.lien-evitement:focus {
+  top: 0.5rem;
+}
+
+/* Boutons d'appel */
+.bouton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--orange-fonce);
+  color: var(--blanc-casse);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--orange-fonce);
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.bouton:hover {
+  background: var(--nuit);
+  border-color: var(--nuit);
+}
+
+/* En-tête et navigation */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--blanc-casse);
+  border-bottom: 2px solid var(--nuit);
+}
+
+.entete-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.marque {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a:not(.bouton) {
+  display: inline-block;
+  padding: 0.4rem 0.25rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.menu a:not(.bouton):hover {
+  text-decoration: underline;
+}
+
+.menu .bouton {
+  padding: 0.5rem 1.25rem;
+}
+
+/* Sections : fonds en alternance */
+main section {
+  padding: 2.5rem 0;
+}
+
+.heros,
+.carte,
+.venir {
+  background: var(--creme);
+}
+
+.esprit,
+.horaires {
+  background: var(--blanc-casse);
+}
+
+.esprit,
+.carte,
+.horaires,
+.venir {
+  border-top: 1px solid var(--nuit);
+}
+
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Héros */
+.heros-texte {
+  align-self: center;
+}
+
+.chapeau {
+  font-size: 1.15rem;
+  max-width: 34rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0 0;
+}
+
+/* Emplacements photos */
+.photo {
+  margin: 0;
+}
+
+.photo-vide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  padding: 1rem;
+  background: var(--creme-fonce);
+  border: 2px dashed var(--nuit);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+/* L'esprit du lieu */
+blockquote {
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 6px solid var(--orange);
+  font-family: var(--police-titre);
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+blockquote p { margin: 0; }
+
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.pastilles li {
+  padding: 0.25rem 0.9rem;
+  border: 1.5px solid var(--nuit);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Carte */
+
+#carte .colonnes-carte {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+#carte .colonnes-carte ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#carte .colonnes-carte li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "nom prix"
+    "description prix";
+  column-gap: 1rem;
+  align-items: start;
+  padding: 0.75rem 0;
+  border-bottom: 1px dotted var(--nuit);
+}
+
+#carte .colonnes-carte li > :first-child {
+  grid-area: nom;
+  font-weight: 700;
+}
+
+#carte .colonnes-carte li > :not(:first-child):not(:last-child) {
+  grid-area: description;
+}
+
+#carte .colonnes-carte li > :last-child {
+  grid-area: prix;
+  align-self: stretch;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#carte .happy-hour {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 2px solid var(--nuit);
+}
+
+@media (min-width: 48rem) {
+  #carte .colonnes-carte {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.carte p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horaires */
+.blocs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.bloc {
+  padding: 1.25rem;
+  border: 2px solid var(--nuit);
+}
+
+.bloc ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.bloc p:last-child {
+  margin-bottom: 0;
+}
+
+/* Venir */
+.venir address {
+  font-style: normal;
+}
+
+.infos {
+  margin-bottom: 1.5rem;
+}
+
+.venir .plan-acces {
+  margin: 0;
+}
+
+/* Pied de page */
+.pied {
+  padding: 1.75rem 0;
+  background: var(--nuit);
+  color: var(--creme);
+  font-size: 0.9rem;
+}
+
+.pied-contenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.pied p {
+  margin: 0;
+}
+
+.pied a:focus-visible {
+  outline-color: var(--creme);
+}
+
+/* Écrans plus larges */
+@media (min-width: 48rem) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+  main section { padding: 4rem 0; }
+  .deux-colonnes { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .galerie { grid-template-columns: repeat(3, 1fr); }
+  .blocs { grid-template-columns: repeat(3, 1fr); }
+  .pied-contenu { grid-template-columns: repeat(3, 1fr); }
+  .pied-contenu p:nth-child(2) { text-align: center; }
+  .pied-contenu p:nth-child(3) { text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bouton { transition: none; }
+}

@@ -1,123 +1,410 @@
-/* Le Pigala : page refaite d'après la maquette (exercice 8). Couleurs de l'enseigne. */
+/* Le Pigala - feuille de style
+   Couleurs de l'enseigne : orange #F26B1D, bleu nuit #1D2A44, crème #FFF6E9, vert houblon #5C8A3A.
+
+   Règles d'usage :
+   - L'orange #F26B1D n'est jamais un texte sur crème ni un fond sous un texte blanc ;
+     il sert seulement de filet décoratif (citation).
+   - Les boutons sont en orange foncé #B84A0C avec un texte blanc.
+   - Le vert houblon sert uniquement de filet décoratif, jamais de texte.
+
+   Contrastes (texte sur fond, minimum 4,5:1) :
+   - bleu nuit sur crème      : environ 13:1
+   - bleu nuit sur blanc      : environ 14:1
+   - bleu nuit sur zone photo #EADFCF : environ 10:1
+   - blanc sur orange foncé   : environ 5,2:1
+   - crème sur bleu nuit      : environ 13:1 */
+
 :root {
   --orange: #F26B1D;
-  --bleu: #1D2A44;
+  --nuit: #1D2A44;
   --creme: #FFF6E9;
-  --vert: #5C8A3A;
-  --orange-fonce: #B84A0C;   /* boutons : blanc sur cet orange = 5,2 pour 1 (E10) */
-  --vert-fonce: #3F6128;     /* encadré : blanc sur ce vert = 7,1 pour 1 (E10) */
-  --texte: #1D2A44;
-  --largeur: 1000px;
+  --houblon: #5C8A3A;
+  --orange-fonce: #B84A0C;
+  --blanc-casse: #FFFFFF;
+  --creme-fonce: #EADFCF;
+  --police: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --police-titre: Georgia, "Times New Roman", serif;
+
+  /* Rôles utilisés aussi par css/plan-acces.css */
+  --fond: var(--creme);
+  --texte: var(--nuit);
+  --surface: var(--blanc-casse);
 }
 
-* { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
   color: var(--texte);
-  background: var(--creme);
-  line-height: 1.5;
+  background: var(--blanc-casse);
+  overflow-wrap: break-word;
 }
 
-h1, h2, h3, .logo, .bouton, nav, .pictos strong {
-  font-family: "Segoe UI", Arial, sans-serif;
+img, svg {
+  max-width: 100%;
+  height: auto;
 }
-h2 { font-size: 1.7rem; margin-top: 0; }
 
-/* Focus visible au clavier, partout (E10) */
-a:focus-visible, .bouton:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
-.entete a:focus-visible, footer a:focus-visible { outline-color: var(--creme); }
-
-/* Lien d'évitement, visible au clavier seulement */
-.evitement {
-  position: absolute; left: -999px; top: 0;
-  background: var(--bleu); color: var(--creme); padding: 0.5rem 1rem;
+.conteneur {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
-.evitement:focus { left: 0; z-index: 10; }
 
-/* En-tête */
-.entete {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem 1.5rem;
-  background: var(--bleu);
+h1, h2, h3 {
+  font-family: var(--police-titre);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0 0 1rem; }
+
+a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--nuit);
+  outline-offset: 3px;
+}
+
+/* Lien d'évitement */
+.lien-evitement {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--nuit);
   color: var(--creme);
+  font-weight: 700;
+  z-index: 20;
 }
-.logo { margin: 0; font-weight: 700; font-size: 1.4rem; }
-.logo a { color: var(--orange); text-decoration: none; }
-.entete nav { display: flex; gap: 1rem; margin-left: auto; }
-.entete nav a { color: var(--creme); text-decoration: none; }
-.entete nav a:hover, .entete nav a:focus { text-decoration: underline; }
+.lien-evitement:focus {
+  top: 0.5rem;
+}
 
+/* Boutons d'appel */
 .bouton {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
+  padding: 0.75rem 1.5rem;
   background: var(--orange-fonce);
-  color: #fff;
-  border-radius: 999px;
+  color: var(--blanc-casse);
+  font-weight: 700;
   text-decoration: none;
+  border: 2px solid var(--orange-fonce);
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.bouton:hover {
+  background: var(--nuit);
+  border-color: var(--nuit);
+}
+
+/* En-tête et navigation */
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--blanc-casse);
+  border-bottom: 2px solid var(--nuit);
+}
+
+.entete-contenu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.marque {
+  margin: 0;
+  font-family: var(--police-titre);
+  font-size: 1.4rem;
   font-weight: 700;
 }
-.bouton:hover, .bouton:focus { background: var(--bleu); }
-.lien { margin-left: 1rem; color: var(--bleu); font-weight: 700; }
 
-/* Sections */
-main > section { padding: 3rem 1.5rem; max-width: var(--largeur); margin: 0 auto; }
-
-.heros { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; }
-.heros h1 { font-size: 2.3rem; margin: 0 0 0.5rem; line-height: 1.15; }
-.accroche { font-size: 1.2rem; max-width: 36rem; }
-
-.photo-attente {
-  min-height: 240px;
-  display: grid; place-items: center;
-  background: #e6dccc; color: var(--bleu);
-  border: 2px dashed var(--bleu); border-radius: 12px;
-  font-family: "Segoe UI", Arial, sans-serif;
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.esprit { background: #fff; max-width: none; }
-.esprit .contenant { max-width: var(--largeur); margin: 0 auto; }
-.pictos { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-.pictos li { padding: 1rem; background: var(--creme); border-radius: 12px; }
-.pictos .picto { color: var(--orange); margin-right: 0.5rem; }
-.pictos strong { display: block; }
+.menu a:not(.bouton) {
+  display: inline-block;
+  padding: 0.4rem 0.25rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
 
-.carte .colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.carte h3 { margin-bottom: 0.5rem; }
-.carte ul { list-style: none; padding: 0; margin: 0; }
-.carte li { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; padding: 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
-.carte .nom { grid-column: 1; font-weight: 700; }
-.carte .desc { grid-column: 1; font-size: 0.95rem; }
-.carte .prix { grid-column: 2; grid-row: 1 / span 2; align-self: start; font-weight: 700; white-space: nowrap; }
-.encadre { margin-top: 1.5rem; padding: 1rem; background: var(--vert-fonce); color: #fff; border-radius: 8px; }
+.menu a:not(.bouton):hover {
+  text-decoration: underline;
+}
 
-.horaires table { border-collapse: collapse; margin-bottom: 1.5rem; min-width: 18rem; }
-.horaires caption { text-align: left; font-weight: 700; padding-bottom: 0.5rem; }
-.horaires th, .horaires td { text-align: left; padding: 0.5rem 1rem 0.5rem 0; border-bottom: 1px dotted var(--bleu); }
-.soirees { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-.soirees li { padding: 1rem; background: #fff; border-radius: 12px; border-left: 6px solid var(--orange); }
+.menu .bouton {
+  padding: 0.5rem 1.25rem;
+}
 
-.venir { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-/* Ils en parlent (E13) */
-.avis-liste { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-.avis figure { margin: 0; padding: 1rem 1.25rem; background: #fff; border-radius: 12px; border-left: 6px solid var(--orange); }
-.avis blockquote { margin: 0; }
-.avis blockquote p { margin: 0 0 0.75rem; }
-.avis figcaption { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; font-size: 0.95rem; }
+/* Sections : fonds en alternance */
+main section {
+  padding: 2.5rem 0;
+}
 
-address { font-style: normal; }
-address a { color: var(--bleu); }
+.heros,
+.carte,
+.venir {
+  background: var(--creme);
+}
 
-footer { padding: 1.5rem; background: var(--bleu); color: var(--creme); text-align: center; font-size: 0.9rem; }
-footer a { color: var(--creme); }
+.esprit,
+.horaires {
+  background: var(--blanc-casse);
+}
 
-@media (max-width: 700px) {
-  .entete { flex-wrap: wrap; }
-  .entete nav { margin-left: 0; width: 100%; }
-  .heros, .venir { grid-template-columns: 1fr; }
-  .heros h1 { font-size: 1.8rem; }
-  .photo-attente { min-height: 160px; }
+.esprit,
+.carte,
+.horaires,
+.venir {
+  border-top: 1px solid var(--nuit);
+}
+
+.deux-colonnes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Héros */
+.heros-texte {
+  align-self: center;
+}
+
+.chapeau {
+  font-size: 1.15rem;
+  max-width: 34rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin: 1.5rem 0 0;
+}
+
+/* Emplacements photos */
+.photo {
+  margin: 0;
+}
+
+.photo-vide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  padding: 1rem;
+  background: var(--creme-fonce);
+  border: 2px dashed var(--nuit);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.galerie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+/* L'esprit du lieu */
+blockquote {
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 6px solid var(--orange);
+  font-family: var(--police-titre);
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+blockquote p { margin: 0; }
+
+.pastilles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.pastilles li {
+  padding: 0.25rem 0.9rem;
+  border: 1.5px solid var(--nuit);
+  border-radius: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Carte */
+
+#carte .colonnes-carte {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+#carte .colonnes-carte ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#carte .colonnes-carte li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "nom prix"
+    "description prix";
+  column-gap: 1rem;
+  align-items: start;
+  padding: 0.75rem 0;
+  border-bottom: 1px dotted var(--nuit);
+}
+
+#carte .colonnes-carte li > :first-child {
+  grid-area: nom;
+  font-weight: 700;
+}
+
+#carte .colonnes-carte li > :not(:first-child):not(:last-child) {
+  grid-area: description;
+}
+
+#carte .colonnes-carte li > :last-child {
+  grid-area: prix;
+  align-self: stretch;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#carte .happy-hour {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 2px solid var(--nuit);
+}
+
+@media (min-width: 48rem) {
+  #carte .colonnes-carte {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.carte p:last-child {
+  margin-bottom: 0;
+}
+
+/* Horaires */
+.blocs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.bloc {
+  padding: 1.25rem;
+  border: 2px solid var(--nuit);
+}
+
+.bloc ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.bloc p:last-child {
+  margin-bottom: 0;
+}
+
+/* Venir */
+.venir address {
+  font-style: normal;
+}
+
+.infos {
+  margin-bottom: 1.5rem;
+}
+
+.venir .plan-acces {
+  margin: 0;
+}
+
+/* Pied de page */
+.pied {
+  padding: 1.75rem 0;
+  background: var(--nuit);
+  color: var(--creme);
+  font-size: 0.9rem;
+}
+
+.pied-contenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.pied p {
+  margin: 0;
+}
+
+.pied a:focus-visible {
+  outline-color: var(--creme);
+}
+
+/* Écrans plus larges */
+@media (min-width: 48rem) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2rem; }
+  main section { padding: 4rem 0; }
+  .deux-colonnes { grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .galerie { grid-template-columns: repeat(3, 1fr); }
+  .blocs { grid-template-columns: repeat(3, 1fr); }
+  .pied-contenu { grid-template-columns: repeat(3, 1fr); }
+  .pied-contenu p:nth-child(2) { text-align: center; }
+  .pied-contenu p:nth-child(3) { text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bouton { transition: none; }
 }

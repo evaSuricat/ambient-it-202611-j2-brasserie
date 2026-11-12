@@ -2,29 +2,19 @@
 
 **Point du programme** : agents IA, automatisation de tâches en autonomie ; atelier officiel « automatiser une tâche répétitive avec un agent IA ». Chronométré.
 
-**Durée** : 20 minutes chronométrées. C'est le **premier exercice de la journée** : il vérifie aussi que votre poste marche (Git, Python, votre outil, Chrome).
+**Durée** : 15 minutes.
 
 ## Ce qu'on fait
 
-`exercices/15-agent-photos/depart/photos/` contient huit images de 1600 pixels de large. La page les attend à deux endroits (« Photo de la façade, à venir », « Photo de la terrasse, à venir ») et peut en montrer d'autres dans l'esprit du lieu. Tâche répétitive : trois tailles par image, les balises, les textes alternatifs.
+`exercices/15-agent-photos/depart/photos/` contient huit images de 1600 pixels de large. La page de l'exercice 11, que vous venez de brancher sur la base, les attend à quatre endroits, chacun marqué « [à fournir] » : « Photo : façade et terrasse » dans le haut de page, puis « Photo : la salle », « Photo : un plat » et « Photo : la terrasse » dans « L'esprit du lieu ». Tâche répétitive : trois tailles par image, les balises, les textes alternatifs.
 
-Le point de départ est la page fournie dans `exercices/15-agent-photos/depart/`, la même pour tout le monde. L'exercice 17 fournit sa propre page : ce que vous produisez ici n'est pas repris plus loin.
+Le point de départ est la page fournie dans `exercices/15-agent-photos/depart/`, la même pour tout le monde : c'est la solution de l'exercice 11, avec sa base `carte.db` et son serveur.
 
 Claude Code demande un abonnement payant. Sans abonnement, faites le même prompt dans le chat de GitHub Copilot Free (sélecteur sur **Agent**), ou suivez sur l'écran partagé de la formatrice. Mode de permissions **Manual** dans Claude Code : lisez chaque permission avant de l'accepter.
 
-### Étape 0 : vérifier le poste, puis enregistrer le point de départ
+### Étape 0 : enregistrer le point de départ
 
 Depuis la racine de `stagiaire_J2`, dans un terminal de VS Code, une ligne après l'autre :
-
-```
-git --version
-```
-
-```
-python --version
-```
-
-Résultat attendu : une ligne `git version 2...`, puis `Python 3.12.x`. Si `python` n'existe pas (Mac, certains Linux), tapez `python3` ici et partout dans cet exercice. Une erreur « n'est pas reconnu » ou « command not found » : l'outil n'est pas installé ou pas dans le chemin ; ne l'installez pas vous-même, dites-le à la formatrice. Un `Python 3.10` ou `3.14` n'empêche pas l'exercice, notez-le.
 
 ```
 git add exercices/15-agent-photos
@@ -34,14 +24,14 @@ git add exercices/15-agent-photos
 git commit -m "E15 : état avant les photos"
 ```
 
-Résultat attendu : une ligne « files changed » ; « nothing to commit » est normal si rien n'a changé depuis le clonage.
+Résultat attendu : une ligne « files changed » ; « nothing to commit » est normal si rien n'a changé depuis le clonage. Ce commit permet de voir ensuite exactement ce que l'agent a changé.
 
 ### Étape 1 : lancer le chrono et envoyer un seul prompt
 
 **Lancez un chrono** (téléphone ou montre), puis donnez un seul prompt à Claude Code. Il crée l'environnement virtuel `.venv` à la **racine** du dépôt, là où VS Code le retrouve tout seul :
 
 ```
-Dans exercices/15-agent-photos/depart/photos/, huit images. Écris exercices/15-agent-photos/depart/redimensionner.py qui produit pour chacune trois largeurs (480, 960, 1600) dans exercices/15-agent-photos/depart/photos/petit, exercices/15-agent-photos/depart/photos/moyen et exercices/15-agent-photos/depart/photos/grand, en JPEG qualité 85, puis lance-le. Ensuite remplace les deux blocs « photo à venir » de exercices/15-agent-photos/depart/index.html par des images responsives (srcset et sizes) avec un texte alternatif qui décrit l'image, et ajoute une galerie de quatre photos dans la section « L'esprit du lieu ». Propose ensuite un message de commit. Si tu as besoin d'une bibliothèque, crée un environnement virtuel .venv à la racine du dépôt (pas dans depart/) et installe-la dedans, avec un requirements.txt à côté de redimensionner.py.
+Dans exercices/15-agent-photos/depart/photos/, huit images. Écris exercices/15-agent-photos/depart/redimensionner.py qui produit pour chacune trois largeurs (480, 960, 1600) dans exercices/15-agent-photos/depart/photos/petit, exercices/15-agent-photos/depart/photos/moyen et exercices/15-agent-photos/depart/photos/grand, en JPEG qualité 85, puis lance-le. Ensuite, dans exercices/15-agent-photos/depart/index.html, remplace les quatre emplacements marqués « [à fournir] » (les blocs photo-vide) par des images responsives (srcset et sizes), en choisissant pour chacun la photo qui correspond à sa légende, avec un texte alternatif qui décrit l'image. Garde les balises figure existantes et la mise en page actuelle. Propose ensuite un message de commit. Si tu as besoin d'une bibliothèque, crée un environnement virtuel .venv à la racine du dépôt (pas dans depart/) et installe-la dedans, avec un requirements.txt à côté de redimensionner.py.
 ```
 
 ### Étape 2 : regarder l'agent travailler
@@ -98,9 +88,9 @@ Résultat attendu : une ligne « Successfully installed pillow-... », puis un f
 
 Résultat attendu : les mêmes que ci-dessus, une ligne « Successfully installed pillow-... », puis un `requirements.txt` qui contient une ligne `pillow==...`. Sans cette variante, un `python -m pip freeze` lancé hors du `.venv` écrirait la liste du Python global, bien plus longue.
 
-### Étape 3 : vérifier dans Chrome
+### Étape 3 : vérifier dans Chrome, avec le serveur
 
-Dans un **deuxième terminal** (bouton **+** du panneau Terminal) :
+Depuis l'exercice 11, la carte vient de la base : la page a besoin du serveur. Dans un **deuxième terminal** (bouton **+** du panneau Terminal) :
 
 ```
 cd exercices/15-agent-photos/depart
@@ -114,11 +104,11 @@ pwd
 python servir.py
 ```
 
-Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/15-agent-photos/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Les images s'affichent. Réduisez d'abord la largeur de la fenêtre, puis F12, onglet Réseau, cochez « Disable cache » et rechargez la page : la variante chargée (480, 960 ou 1600 pixels) dépend de la largeur. Sur un écran à haute densité, Chrome choisit souvent la plus grande : c'est normal. « Ce site est inaccessible » : le serveur n'est pas lancé ; un 404 ou un 500 dans la console : le serveur tourne et l'adresse ou le code est faux.
+Résultat attendu : `pwd` affiche un chemin qui se termine par `exercices/15-agent-photos/depart`, puis le serveur affiche une adresse et reste en attente (`Ctrl+C` l'arrête). Ouvrez http://127.0.0.1:8000/. Les quatre photos s'affichent à la place des cadres « [à fournir] », et la carte est là. Sans serveur (double-clic sur `index.html`), la page s'ouvre et les photos s'affichent, mais la carte affiche « La carte n'a pas pu être chargée. ». Réduisez la largeur de la fenêtre, puis F12, onglet Réseau, cochez « Disable cache » et rechargez : la variante chargée (480, 960 ou 1600 pixels) dépend de la largeur. Sur un écran à haute densité, Chrome choisit souvent la plus grande : c'est normal. « Ce site est inaccessible » : le serveur n'est pas lancé ; un 404 ou un 500 dans la console : le serveur tourne et l'adresse ou le code est faux.
 
 ### Étape 4 : lire les textes alternatifs
 
-`AGENTS.md`, à la racine du dépôt, les exige : vérifiez qu'ils décrivent vraiment ce qu'on voit sur la photo, pas le nom du fichier.
+`AGENTS.md`, à la racine du dépôt, les exige : vérifiez qu'ils décrivent vraiment ce qu'on voit sur la photo, pas le nom du fichier. Vérifiez aussi que chaque photo correspond à sa légende (la salle, un plat, la terrasse).
 
 ### Étape 5 : vérifier que `.venv` n'est pas suivi par Git
 
@@ -128,7 +118,7 @@ Depuis la racine, dans le premier terminal :
 git status
 ```
 
-Résultat attendu : `.venv` n'apparaît pas, il est ignoré par git. Les fichiers listés sont `redimensionner.py`, `requirements.txt`, `index.html`, `style.css`, et les trois dossiers de photos.
+Résultat attendu : `.venv` n'apparaît pas, il est ignoré par git. Les fichiers listés sont `redimensionner.py`, `requirements.txt`, `index.html`, et les trois dossiers de photos.
 
 ### Étape 6 : arrêter le chrono et enregistrer
 
@@ -139,18 +129,17 @@ git add exercices/15-agent-photos
 ```
 
 ```
-git commit -m "Photos : trois tailles par image, galerie et images responsives"
+git commit -m "Photos : trois tailles par image et quatre images responsives"
 ```
 
 Remplacez le message par celui de l'agent, relu et corrigé, s'il est meilleur. Résultat attendu : une ligne « N files changed » (le nombre de fichiers touchés) et la liste des fichiers créés. `git show --stat` affiche la liste complète, y compris `redimensionner.py`, `requirements.txt` et `index.html`. Un commit se défait : rien n'est perdu.
 
 ## Livrable
 
-`redimensionner.py`, `requirements.txt` (dans `exercices/15-agent-photos/depart/`), 24 images dans `photos/petit`, `photos/moyen` et `photos/grand`, la page avec ses photos, un commit, le temps du chrono. Le `.venv` est à la racine du dépôt.
+`redimensionner.py`, `requirements.txt` (dans `exercices/15-agent-photos/depart/`), 24 images dans `photos/petit`, `photos/moyen` et `photos/grand`, la page avec ses quatre photos, deux commits (avant et après), le temps du chrono. Le `.venv` est à la racine du dépôt.
 
 ## Ce qu'on retient
 
 - L'agent a enchaîné six gestes qu'on aurait faits à la main en une heure. Le chrono le dit.
 - Il a eu besoin d'installer quelque chose : c'est le moment où on lit avant d'accepter. Sur le poste d'une entreprise, c'est souvent interdit, et il faut le savoir avant.
 - Le texte alternatif est exigé par `AGENTS.md` : l'outil l'a écrit. Reste à vérifier qu'il décrit vraiment la photo. Une règle écrite vaut mieux qu'une correction après coup, et elle ne dispense pas de relire.
-- Cet exercice a aussi servi à vérifier votre poste : si quelque chose a coincé, c'est le bon moment pour le dire.

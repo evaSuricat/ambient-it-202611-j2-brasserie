@@ -1,15 +1,68 @@
-/* Réserver une table : formulaire de réservation (E17) */
-.reservation form { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem 1.5rem; max-width: 720px; }
-.reservation .champ { display: flex; flex-direction: column; gap: 0.25rem; }
-.reservation .champ-large { grid-column: 1 / -1; }
-.reservation label { font-family: "Segoe UI", Arial, sans-serif; font-weight: 700; }
-.reservation input, .reservation textarea {
-  font: inherit; color: var(--texte); background: #fff;
-  padding: 0.6rem 0.75rem; border: 2px solid var(--bleu); border-radius: 8px;
+/* Le Pigala - composant « réserver une table »
+   Les couleurs viennent des variables de style.css (--nuit, --creme, --blanc-casse, --orange-fonce).
+   Contrastes (texte sur fond, minimum 4,5:1) :
+   - bleu nuit sur crème      : environ 13:1
+   - bleu nuit sur blanc      : environ 14:1 (texte saisi dans les champs)
+   - orange foncé sur crème   : environ 4,9:1 (message d'erreur)
+   - blanc sur orange foncé   : environ 5,2:1 (bouton, défini par .bouton dans style.css) */
+
+.reservation {
+  background: var(--creme);
+  border-top: 1px solid var(--nuit);
 }
-.reservation input:focus-visible, .reservation textarea:focus-visible, .reservation button:focus-visible {
-  outline: 3px solid var(--bleu); outline-offset: 3px;
+
+.reservation form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem 1.5rem;
+  max-width: 45rem;
 }
-.reservation button { justify-self: start; border: 0; cursor: pointer; font: inherit; font-family: "Segoe UI", Arial, sans-serif; }
-#reservation-message { margin: 1rem 0 0; font-weight: 700; }
-#reservation-message.reservation-erreur { color: #8A1C1C; }
+
+.reservation .champ {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reservation .champ-large {
+  grid-column: 1 / -1;
+}
+
+.reservation label {
+  font-weight: 700;
+}
+
+.reservation input,
+.reservation textarea {
+  font: inherit;
+  color: var(--texte);
+  background: var(--blanc-casse);
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--nuit);
+  border-radius: 0.5rem;
+}
+
+.reservation input:focus-visible,
+.reservation textarea:focus-visible,
+.reservation button:focus-visible {
+  outline: 3px solid var(--nuit);
+  outline-offset: 3px;
+}
+
+.reservation button {
+  justify-self: start;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+#reservation-message {
+  margin: 1rem 0 0;
+  font-weight: 700;
+}
+
+#reservation-message.reservation-erreur {
+  padding-left: 0.75rem;
+  border-left: 4px solid var(--orange-fonce);
+  color: var(--orange-fonce);
+}

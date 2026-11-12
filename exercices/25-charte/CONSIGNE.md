@@ -2,7 +2,7 @@
 
 **Point du programme** : atelier officiel « charte d'usage de l'IA » ; cadre, suivi des usages, normes.
 
-**Durée** : 45 minutes.
+**Durée** : 40 minutes.
 
 ## Ce qu'on fait
 
@@ -67,7 +67,7 @@ Choisissez **une** règle de votre tableau et prouvez-la, comme à l'exercice 21
 
 Remplissez la section « La règle que j'ai testée » de `charte-ia.md`, et la colonne « Testée ? » de cette ligne. Résultat attendu : une preuve écrite, avec un résultat réel de votre poste. Si la règle a résisté, dites jusqu'où ; si elle a cédé, dites comment la renforcer.
 
-### Étape 5 : se préparer à présenter (5 min)
+### Étape 5 : se préparer à présenter (dans les dernières minutes de l'étape 4)
 
 Pour la mise en commun, deux minutes par groupe : vos trois règles les plus solides et la règle que vous avez testée avec son résultat.
 

@@ -28,11 +28,12 @@ Si `python` n'existe pas sur votre poste (Mac, certains Linux), tapez `python3` 
 
 ## Une seule page, d'exercice en exercice
 
-**Tout le monde part de la page fournie** : personne n'a besoin de sa page du jour 1. L'exercice 15, premier de la journée, part de la page sans photos (celle avec « Photo de la façade, à venir »). L'exercice 17 fournit sa propre page, déjà dotée de ses photos. Ensuite, chaque `depart/` est la solution de l'exercice précédent quand l'exercice touche la page ou le serveur (17, 21, 23).
+**Tout le monde part de la page fournie** : personne n'a besoin de sa page du jour 1. C'est la page de la formatrice, avec sa carte écrite en HTML et quatre emplacements photo « [à fournir] ». L'exercice 11, premier de la journée, la branche sur une base. Ensuite, chaque `depart/` est la solution de l'exercice précédent quand l'exercice touche la page ou le serveur (15, 17, 21, 23).
 
 | Exercice | Point du programme | Durée |
 |---|---|---|
-| 15 L'agent fait le sale boulot | Atelier officiel : automatiser une tâche répétitive avec un agent. Premier de la journée, il vérifie aussi les postes | 20 min chronométrées |
+| 11 La carte en base | Le vibe coding et SQL : la page devient une petite application. Premier de la journée, il vérifie aussi les postes | 15 min |
+| 15 L'agent fait le sale boulot | Atelier officiel : automatiser une tâche répétitive avec un agent | 15 min chronométrées |
 | 17 Les réservations arrivent | Le fil rouge reprend : une page qui enregistre des données personnelles | 15 min |
 | 18 Avant d'exécuter | Sécurité avant exécution du code, hallucinations. Tri à l'oral, sans outil | 10 min |
 | 19 Ce que mes outils gardent de moi | Fuite de données, conservation | 15 min |
@@ -41,7 +42,7 @@ Si `python` n'existe pas sur votre poste (Mac, certains Linux), tapez `python3` 
 | 22 À qui est ce code ? | Propriété du code, droits, licences, auditabilité. En slides et en discussion | 20 min |
 | 23 La fiche et la purge | RGPD, traçabilité, conservation | 25 min |
 | 24 Revue d'une user story | Atelier officiel : biais et risques d'une user story | 45 min |
-| 25 Une charte qui se vérifie | Atelier officiel : charte d'usage de l'IA | 45 min |
+| 25 Une charte qui se vérifie | Atelier officiel : charte d'usage de l'IA | 40 min |
 | Bonus formulaire | Formulaire de réservation robuste | 20 à 30 min |
 | Bonus sous-agent | Écrire son propre sous-agent dans `.claude/agents/` | 20 à 30 min |
 
