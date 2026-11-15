@@ -2,11 +2,11 @@
 
 **Point du programme** : propriété du code, droits, licences, auditabilité.
 
-**Durée** : 20 minutes, à 13 h.
+**Durée** : 15 minutes, de 13 h 10 à 13 h 25 (à la reprise, après le déjeuner).
 
 ## Ce qu'on fait
 
-Cet exercice se fait en slides et en discussion (20 minutes à 13 h). Les trois cas et l'extrait de `exercices/22-a-qui-est-ce-code/depart/` restent à lire pendant la discussion. Aucun livrable.
+Cet exercice se fait en slides et en discussion (15 minutes, à 13 h 10). Les trois cas et l'extrait de `exercices/22-a-qui-est-ce-code/depart/` restent à lire pendant la discussion. Aucun livrable.
 
 **Ceci n'est pas un avis juridique.** Les sources lues pour cet exercice sont dans `exercices/22-a-qui-est-ce-code/depart/SOURCES.md`.
 

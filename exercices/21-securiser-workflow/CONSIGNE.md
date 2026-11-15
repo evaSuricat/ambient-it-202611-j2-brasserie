@@ -24,6 +24,38 @@ git commit -m "E21 : état avant la sécurisation"
 
 Résultat attendu : « nothing to commit » est normal si rien n'a changé depuis le clonage. Sinon, une ligne « files changed ».
 
+### Étape 0 bis : voir d'où on part (3 minutes)
+
+Avant de chercher les failles, regardez ce que le site fait. Depuis E17, la page du Pigala a un formulaire « Réserver une table ». Chaque réservation envoyée arrive dans la base `carte.db`, table `reservations`, avec le nom, le téléphone, le courriel, la date, le nombre de couverts et le commentaire du client. La base fournie en contient déjà 30, fictives. Le serveur `servir.py` sert la page, enregistre les réservations, et propose une recherche de réservation par nom.
+
+Ouvrez un deuxième terminal (bouton **+** du panneau Terminal). Un serveur ne rend jamais la main : il garde ce terminal pour lui jusqu'à la fin de l'étape 3. Depuis la racine de `stagiaire_J2` :
+
+```
+cd exercices/21-securiser-workflow/depart
+```
+
+```
+python servir.py
+```
+
+Résultat attendu : le serveur affiche son adresse et reste en attente. Si le port 8000 est pris (un serveur d'un exercice précédent tourne encore), arrêtez l'autre serveur avec `Ctrl+C` dans son terminal, ou lancez `python servir.py 8001` et remplacez `8000` par `8001` dans les adresses de cet exercice.
+
+Dans Chrome, ouvrez la page, comme un client :
+
+```
+http://127.0.0.1:8000/
+```
+
+Résultat attendu : la page du Pigala, avec sa carte, ses photos et le formulaire « Réserver une table ». N'envoyez rien.
+
+Le serveur fourni depuis E17 contient aussi une recherche de réservation par nom, écrite pour la formation. Son code dit qu'elle sert au gérant à retrouver une réservation. Aucun bouton ne la montre sur la page, mais n'importe qui peut l'appeler par son adresse :
+
+```
+http://127.0.0.1:8000/api/reservations?nom=Lemaire
+```
+
+Résultat attendu : une réservation en clair, avec le nom, le téléphone, le courriel et la date. C'est tout l'enjeu de l'exercice : le site enregistre des données personnelles, et il les rend à quiconque connaît l'adresse. Laissez le serveur tourner : les étapes 2 et 3 s'en servent.
+
 ### Étape 1 : les tests, au rouge
 
 ```
@@ -38,7 +70,7 @@ Résultat attendu : `Ran 6 tests`, puis `FAILED (failures=4)`. Deux tests passen
 
 ### Étape 2 : prouver la fuite avec le navigateur
 
-Ouvrez un deuxième terminal (bouton **+**), allez dans le même dossier (`cd exercices/21-securiser-workflow/depart`) et lancez `python servir.py`. Dans Chrome, ouvrez ces deux adresses l'une après l'autre :
+Le serveur tourne toujours dans le deuxième terminal, depuis l'étape 0 bis (sinon, relancez-le comme à l'étape 0 bis). Dans Chrome, ouvrez ces deux adresses l'une après l'autre :
 
 ```
 http://127.0.0.1:8000/carte.db
@@ -234,11 +266,29 @@ cd ../../..
 git add exercices/21-securiser-workflow AGENTS.md .claude
 ```
 
+Avant de committer, lisez la liste de ce que Git va enregistrer. La dernière fuite possible, c'est Git : un fichier de données committé reste dans l'historique du dépôt, et il part avec lui au prochain `git push`. Cette fuite se voit en lisant la liste avant de committer :
+
+```
+git status
+```
+
+Résultat attendu : les fichiers modifiés (`servir.py`, `gerant.py`, `separer_base.py`, `AGENTS.md`...), et **aucune ligne qui contient `donnees/`**. Le dossier `donnees/` est ignoré par Git (c'est une règle du fichier `.gitignore` à la racine), donc ses nouveaux fichiers n'apparaissent pas. Si une ligne cite quand même `donnees/` (par exemple « renamed » : l'outil a déplacé `reservations.csv` avec `git mv`, et Git suivait déjà ce fichier), ne committez pas. Dites à Git de ne plus suivre ce dossier, sans effacer les fichiers, puis relisez :
+
+```
+git rm -r --cached exercices/21-securiser-workflow/depart/donnees
+```
+
+```
+git status
+```
+
+Résultat attendu : plus aucune ligne avec `donnees/` (une ligne « deleted » pour l'ancien `reservations.csv` est normale). Puis :
+
 ```
 git commit -m "E21 : base séparée, liste blanche, recherche retirée du serveur public, tests au vert"
 ```
 
-Résultat attendu : une ligne « files changed » avec `servir.py`, `gerant.py`, `separer_base.py` et `donnees/`.
+Résultat attendu : une ligne « files changed » avec `servir.py`, `gerant.py` et `separer_base.py`, et aucun fichier de `donnees/`.
 
 ### Étape 11 (si le temps le permet) : l'outil respecte-t-il vos règles ?
 

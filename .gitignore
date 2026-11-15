@@ -13,3 +13,8 @@ __pycache__/
 
 # Volontairement absent : la règle « rapports/ » du jour 1 était trop large.
 # Les fichiers carte.db des depart/ sont versionnés exprès (données fictives).
+
+# Réservations des clients : tout nouveau fichier d'un dossier donnees/ est ignoré
+# par Git, pour qu'un « git add » d'un exercice ne l'envoie jamais dans un commit.
+# Les fichiers de donnees/ déjà suivis (E23 et bonus formulaire) le restent.
+donnees/
