@@ -1,6 +1,6 @@
 # Charte d'usage de l'IA (exemple figé, écrit pour l'exercice)
 
-Texte écrit à la main pour imiter ce que produit un modèle quand on lui demande « écris-moi une charte d'usage de l'IA ». Il sert de repli si votre outil ne répond pas, et de support pour s'entraîner à trier.
+Texte écrit à la main pour l'exercice, dans le style de ce qu'on obtient quand on demande à un modèle « écris-moi une charte d'usage de l'IA ». Ce n'est pas une vraie réponse de modèle. Il sert à s'entraîner à trier. Pour chaque règle, deux questions : qui la tient ? Quelle preuve garde-t-on ?
 
 1. Utiliser l'IA de manière éthique et responsable.
 2. Être prudent avec les données sensibles.

@@ -24,7 +24,7 @@ Texte de la réponse (quelques lignes, au vouvoiement, sans conclure sur le droi
 - Pratique proposée à l'équipe (une phrase) :
 - Trace de cette pratique (par exemple une ligne d'AGENTS.md ou un modèle de message de commit) :
 
-## Réglage « suggestions qui correspondent à du code public »
+## Réglage « Suggestions matching public code »
 
 Valeur actuelle sur mon compte GitHub (copiez ce que votre écran affiche, ou « absent ») :
 

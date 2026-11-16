@@ -39,7 +39,7 @@ Si `python` n'existe pas sur votre poste (Mac, certains Linux), tapez `python3` 
 | 19 Ce que mes outils gardent de moi | Fuite de données, conservation | 15 min |
 | 20 Trois fuites dans un Dockerfile | Publication d'images Docker et confidentialité | 10 min |
 | 21 Sécuriser le workflow | Atelier officiel : requête SQL sensible, anonymisation, sous-agent de relecture | 40 min, et 10 min de marge |
-| 22 À qui est ce code ? | Propriété du code, droits, licences, auditabilité. En slides et en discussion | 15 min |
+| 22 À qui est ce code ? | Propriété du code, droits, licences, auditabilité. En slides et en discussion, puis un geste final de 5 minutes | 20 min |
 | 23 La fiche et la purge | RGPD, traçabilité, conservation | démonstration de la formatrice, 10 min |
 | 24 Revue d'une user story | Atelier officiel : biais et risques d'une user story | atelier officiel, 20 min, en plénière |
 | 25 Une charte qui se vérifie | Atelier officiel : charte d'usage de l'IA | atelier officiel, 25 min |
@@ -61,4 +61,5 @@ Puis http://127.0.0.1:8000/ dans Chrome. `Ctrl+C` arrête le serveur. Deux situa
 - `carte.db` est versionnée dans les `depart/` : c'est voulu, la base fait partie de l'exercice. Elle ne contient que des données fictives. Dans un vrai projet, on ne versionne jamais une base de clients.
 - Les solutions complètes vivent dans le dépôt de la formatrice. Chaque `depart/` qui prolonge un exercice précédent en contient la solution : celui d'E23 contient `servir.py`, `gerant.py` et `separer_base.py` corrigés, qui sont la solution d'E21, voulue ainsi.
 - `.claude/agents/relecteur-code.md`, à la racine, est le sous-agent de relecture de l'exercice 21 : il est versionné exprès. Le dossier `.venv/` que l'exercice 15 crée à la racine est ignoré par git.
+- **Ce que vous emportez en plus des exercices.** Trois sous-agents en lecture seule : `relecteur-code` (exercice 21), `pre-analyse-juridique` (exercices 24 et 25) et celui du bonus ; la page `ressources/quel-sous-agent-pour-quoi.md` dit lequel lancer et quand. Le dossier `ressources/sources-juridiques/` contient les textes que `pre-analyse-juridique` a le droit de lire (RGPD, règlement européen sur l'IA, code de la propriété intellectuelle, guide de la CNIL, support de la DGE) : lisez son `LISEZ-MOI.md`, rien n'y est un avis juridique. Le fichier `ressources/hooks/pre-commit` est un hook Git : installé par `git config core.hooksPath ressources/hooks`, il lance les tests de sécurité avant tout commit qui touche `servir.py` et refuse le commit s'ils échouent. Il ne s'installe pas tout seul ; sous macOS ou Linux, rendez-le d'abord exécutable (`chmod +x ressources/hooks/pre-commit`).
 - Le `.gitignore` ne contient que le nécessaire (`.venv/`, les fichiers de l'éditeur et les nouveaux fichiers des dossiers `donnees/`, qui contiennent les réservations des clients). Il n'ignore pas `rapports/` : vos dossiers de comptes rendus se committent normalement.

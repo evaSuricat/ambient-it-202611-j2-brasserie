@@ -12,9 +12,11 @@ Puis la formatrice montre **trois règles déjà testées pendant la journée**,
 
 Sans abonnement Claude Code, rien ne change : cet atelier se fait à la main, sans outil. Rien de personnel à l'écran.
 
-### Étape 1 : lire deux exemples de règles qui se vérifient (5 min)
+### Étape 1 : dix règles qui ne se vérifient pas, deux qui se vérifient (5 min)
 
-Chaque règle a un **qui** et une **preuve**. Deux exemples, les vôtres seront différentes :
+La formatrice projette `exercices/25-charte/depart/charte-exemple-ia.md` : une charte en dix règles, écrite pour l'exercice dans le style de ce qu'on obtient d'une IA en une phrase. Elles sonnent toutes sérieuses. Question pour la salle : **laquelle peut-on prouver demain qu'elle a été tenue ?**
+
+Ce qui manque à chacune : un **qui** et une **preuve**. Deux exemples de règles qui les ont, les vôtres seront différentes :
 
 - *Règle* : chaque demande de fusion de code (merge request) passe l'analyse SonarQube avant la relecture par une personne. *Qui* : l'auteur de la demande. *Preuve* : le rapport SonarQube lié à la demande.
 - *Règle* : le code classé confidentiel n'est envoyé qu'à un fournisseur choisi par l'équipe (serveur interne, cloud de l'entreprise en région européenne avec conservation à zéro, ou fournisseur payant avec conservation à zéro vérifiée). *Qui* : le responsable technique. *Preuve* : la configuration de l'outil, avec le fournisseur et la région, relue à chaque mise à jour.
@@ -71,4 +73,4 @@ Résultat attendu : une ligne « files changed » qui cite `charte-ia.md`.
 - Trois règles qu'on tient valent mieux que dix qu'on oublie.
 - Une règle écrite dans `AGENTS.md` guide l'outil sans l'obliger ; un hook, lui, s'impose. Dans les deux cas, on essaie la règle pour de vrai, et on refait l'essai quand l'outil change.
 
-Pour aller plus loin chez vous : `tableau-normes.md` (normes citées, outils de suivi, et le témoignage d'un hook de la formatrice), `regles-testees-exemples.md` (trois façons de rendre une règle vérifiable) et `charte-exemple-ia.md` (dix règles écrites par une IA : lesquelles se vérifient ?) sont dans `exercices/25-charte/depart/`.
+Pour aller plus loin chez vous : `tableau-normes.md` (normes citées, outils de suivi, et le témoignage d'un hook de la formatrice), `regles-testees-exemples.md` (trois façons de rendre une règle vérifiable) et `charte-exemple-ia.md` (les dix règles de l'étape 1, écrites pour l'exercice : à reformuler une par une avec un qui et une preuve) sont dans `exercices/25-charte/depart/`.

@@ -18,7 +18,7 @@ La formatrice, sur son écran :
 2. lance `python calcul.py`, qui compte les absences des 120 dernières demandes par code postal et par créneau horaire ;
 3. demande à une IA de lister les risques de la user story.
 
-La salle repère les risques à l'oral. Ensuite la formatrice projette la grille de risques remplie (`solution/grille-risques.md`) : on compare avec ce que vous avez trouvé. Si vous voulez suivre par écrit, le fichier `grille-risques.md` du dossier `depart/` est là, c'est facultatif.
+La salle repère les risques à l'oral. Ensuite la formatrice projette une user story réécrite après la revue : on y cherche ce que vous avez dit, et ce qui manque encore. Vous repartez avec ce texte : `exercices/24-revue-user-story/apres-la-revue/user-story-apres-revue.md`. Ne l'ouvrez pas avant la discussion, vous vous priveriez de l'exercice. Si vous voulez suivre par écrit, le fichier `grille-risques.md` du dossier `depart/` est là, c'est facultatif.
 
 ## Les questions à se poser à l'oral
 
@@ -27,6 +27,7 @@ La salle repère les risques à l'oral. Ensuite la formatrice projette la grille
 - La réservation n° 15 (`ressources/reservations.csv`) contient une instruction cachée dans son commentaire. Que se passe-t-il si une IA qui lit cette ligne a le pouvoir d'accepter ou de refuser ?
 - « Le taux d'absence baisse » : comment le vérifier ? Qui mesure, sur quoi, comparé à quoi ?
 - Quelles données envoie-t-on au modèle, et sont-elles toutes nécessaires ? (Revoyez l'exercice 21.)
+- Sur quoi l'IA s'appuie-t-elle pour dire qu'il reste une table ? Cherchez dans la user story : les tables déjà réservées pour ce service, et celles qu'un restaurant garde pour les clients qui viennent sans réserver.
 
 ## L'article 22 du RGPD, en une phrase
 

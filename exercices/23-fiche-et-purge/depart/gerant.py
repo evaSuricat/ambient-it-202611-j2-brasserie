@@ -18,7 +18,7 @@ def chercher(nom):
     with sqlite3.connect(f"file:{BASE}?mode=ro", uri=True) as connexion:
         connexion.row_factory = sqlite3.Row
         return connexion.execute(
-            "SELECT id, nom, telephone, date, couverts, commentaire "
+            "SELECT id, nom, telephone, email, date, couverts, commentaire, cree_le "
             "FROM reservations WHERE nom LIKE ? ORDER BY date",
             (f"%{nom}%",),
         ).fetchall()
@@ -28,7 +28,10 @@ def main():
     nom = sys.argv[1] if len(sys.argv) > 1 else ""
     lignes = chercher(nom)
     for l in lignes:
-        print(f"{l['id']:>3} | {l['date']} | {l['couverts']} pers. | {l['nom']} | {l['telephone']} | {l['commentaire']}")
+        print(
+            f"{l['id']:>3} | {l['date']} | {l['couverts']} pers. | {l['nom']} | {l['telephone']} | "
+            f"{l['email']} | {l['commentaire']} | reçue le {l['cree_le']}"
+        )
     print(f"{len(lignes)} réservation(s).")
 
 

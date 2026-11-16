@@ -1,0 +1,80 @@
+#!/bin/sh
+# Hook Git « pre-commit » : les tests de sécurité avant tout commit qui touche servir.py.
+#
+# Un hook Git est un petit programme que Git lance tout seul à un moment précis.
+# Celui-ci se lance juste avant chaque commit. Si le commit contient un fichier
+# servir.py, il lance test_securite.py du même dossier. Si un test échoue, le commit
+# est refusé. Sinon il passe, et le hook affiche la ligne de preuve à garder.
+#
+# Installation, une fois, depuis la racine du dépôt :
+#     git config core.hooksPath ressources/hooks
+# Désinstallation :
+#     git config --unset core.hooksPath
+#
+# Limites, à connaître :
+# - Il ne vaut que sur ce poste : chaque personne l'installe chez elle.
+# - « git commit --no-verify » le saute. Seule l'intégration continue s'impose à tous.
+# - Les tests portent sur les fichiers tels qu'ils sont sur le disque.
+
+# Quel Python est disponible sur ce poste ?
+PY=""
+for candidat in python python3 py; do
+    if command -v "$candidat" >/dev/null 2>&1; then
+        PY="$candidat"
+        break
+    fi
+done
+
+# Les messages passent par Python quand il existe : les accents s'affichent bien
+# dans tous les terminaux, y compris PowerShell.
+dire() {
+    if [ -n "$PY" ]; then
+        "$PY" -c "import sys; sys.stdout.reconfigure(encoding='utf-8'); print(sys.argv[1])" "$1"
+    else
+        echo "$1"
+    fi
+}
+
+# Les fichiers servir.py ajoutés ou modifiés dans ce commit.
+fichiers=$(git diff --cached --name-only --diff-filter=ACM | grep -E '(^|/)servir\.py$')
+if [ -z "$fichiers" ]; then
+    exit 0
+fi
+
+if [ -z "$PY" ]; then
+    dire "[hook] Python introuvable : impossible de lancer les tests de sécurité. Commit refusé."
+    exit 1
+fi
+
+racine=$(git rev-parse --show-toplevel)
+echec=0
+lances=0
+
+ancien_ifs=$IFS
+IFS='
+'
+for fichier in $fichiers; do
+    dossier=$(dirname "$racine/$fichier")
+    if [ ! -f "$dossier/test_securite.py" ]; then
+        dire "[hook] $fichier : pas de test_securite.py dans ce dossier, rien à lancer."
+        continue
+    fi
+    dire "[hook] $fichier est dans ce commit : je lance test_securite.py"
+    lances=$((lances + 1))
+    if ! (cd "$dossier" && "$PY" -m unittest test_securite); then
+        echec=1
+    fi
+done
+IFS=$ancien_ifs
+
+if [ "$echec" -ne 0 ]; then
+    dire "[hook] Tests de sécurité en échec : commit REFUSÉ. Rien n'a été enregistré."
+    dire "[hook] Corrigez, relancez les tests, puis refaites le commit."
+    exit 1
+fi
+
+if [ "$lances" -gt 0 ]; then
+    dire "[hook] Tests de sécurité au vert : le commit passe."
+    dire "[hook] Preuve à garder dans le message : python -m unittest test_securite, OK"
+fi
+exit 0

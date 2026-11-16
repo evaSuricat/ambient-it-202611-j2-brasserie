@@ -1,6 +1,6 @@
 ---
 name: relecteur-code
-description: Relit un fichier Python ou JavaScript pour trouver les failles de sécurité et les données personnelles exposées. Utiliser avant toute correction, en lecture seule.
+description: Relit un fichier Python ou JavaScript pour trouver les failles de sécurité et les données personnelles exposées. Utiliser avant toute correction, en lecture seule. Ne sert pas à dire ce que la loi demande (voir pre-analyse-juridique, s'il est dans le dépôt) ni à fouiller un dossier de documents à la recherche de coordonnées (voir detecteur-coordonnees, s'il est dans le dépôt).
 tools: Read, Grep, Glob
 model: sonnet
 ---
